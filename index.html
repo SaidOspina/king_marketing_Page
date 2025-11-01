@@ -342,14 +342,14 @@
             line-height: 1.8;
         }
 
-        /* portafolio */
-        .portafolio-grid {
+        /* Portfolio */
+        .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2.5rem;
         }
 
-        .portafolio-item {
+        .portfolio-item {
             position: relative;
             border-radius: 20px;
             overflow: hidden;
@@ -358,12 +358,12 @@
             cursor: pointer;
         }
 
-        .portafolio-item:hover {
+        .portfolio-item:hover {
             transform: scale(1.05) translateY(-10px);
             box-shadow: 0 20px 50px rgba(255, 215, 0, 0.4);
         }
 
-        .portafolio-item img {
+        .portfolio-item img {
             width: 100%;
             height: 350px;
             object-fit: cover;
@@ -371,11 +371,11 @@
             transition: transform 0.4s;
         }
 
-        .portafolio-item:hover img {
+        .portfolio-item:hover img {
             transform: scale(1.1);
         }
 
-        .portafolio-overlay {
+        .portfolio-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
@@ -387,11 +387,11 @@
             transition: transform 0.4s;
         }
 
-        .portafolio-item:hover .portafolio-overlay {
+        .portfolio-item:hover .portfolio-overlay {
             transform: translateY(0);
         }
 
-        .portafolio-overlay h3 {
+        .portfolio-overlay h3 {
             color: #FFD700;
             margin-bottom: 0.8rem;
             font-size: 1.8rem;
@@ -617,7 +617,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .portafolio-grid {
+            .portfolio-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -673,7 +673,7 @@
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#portafolio">Portafolio</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
@@ -749,26 +749,26 @@
         </div>
     </div>
 
-    <section id="portafolio">
+    <section id="portfolio">
         <h2>Casos de Éxito</h2>
-        <div class="portafolio-grid">
-            <div class="portafolio-item">
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
                 <img src="https://res.cloudinary.com/dqaxadodm/image/upload/v1761000281/feliz-pareja-hablando-con-un-concesionario-de-automoviles_lrxznh.jpg" alt="Proyecto 1">
-                <div class="portafolio-overlay">
+                <div class="portfolio-overlay">
                     <h3>Sector Automotriz</h3>
                     <p>Aumentamos las ventas en un 150% mediante campañas digitales segmentadas y estrategias de contenido.</p>
                 </div>
             </div>
-            <div class="portafolio-item">
+            <div class="portfolio-item">
                 <img src="https://res.cloudinary.com/dqaxadodm/image/upload/v1760647247/colegas-trabajando-juntos-en-una-oficina-de-call-center_1_udce8u.jpg" alt="Proyecto 2">
-                <div class="portafolio-overlay">
+                <div class="portfolio-overlay">
                     <h3>Call Center Solutions</h3>
                     <p>Optimizamos la captación de leads generando un incremento del 200% en conversiones cualificadas.</p>
                 </div>
             </div>
-            <div class="portafolio-item">
+            <div class="portfolio-item">
                 <img src="https://res.cloudinary.com/dqaxadodm/image/upload/v1760646801/joven-pareja-feliz-abrazandose-despues-de-una-exitosa-reunion-con-su-agente-inmobiliario_ys22qt.jpg" alt="Proyecto 3">
-                <div class="portafolio-overlay">
+                <div class="portfolio-overlay">
                     <h3>Sector Inmobiliario</h3>
                     <p>Desarrollamos una estrategia integral que triplicó las consultas y cerró más negocios en 6 meses.</p>
                 </div>
@@ -825,30 +825,69 @@
         <p>Transformando marcas, creando experiencias.</p>
     </footer>
 
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("zIeqBcQvqDWK7b_66"); // Reemplaza con tu Public Key de EmailJS
+        })();
+    </script>
+
     <script>
-        // Form submission handler
+        // Form submission handler with EmailJS
         function handleSubmit(e) {
             e.preventDefault();
             const button = e.target.querySelector('button');
             const originalText = button.textContent;
+            const form = e.target;
+            
+            // Get form data
+            const nombre = form.querySelector('input[type="text"]').value;
+            const email = form.querySelector('input[type="email"]').value;
+            const telefono = form.querySelector('input[type="tel"]').value;
+            const mensaje = form.querySelector('textarea').value;
             
             button.textContent = 'Enviando...';
             button.style.opacity = '0.7';
             button.disabled = true;
-            
-            setTimeout(() => {
-                button.textContent = '✓ Enviado';
-                button.style.background = 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)';
-                
-                setTimeout(() => {
-                    alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
-                    e.target.reset();
-                    button.textContent = originalText;
-                    button.style.background = '';
-                    button.style.opacity = '1';
-                    button.disabled = false;
-                }, 1500);
-            }, 1000);
+
+            // Prepare template parameters
+            const templateParams = {
+                from_name: nombre,
+                from_email: email,
+                phone: telefono,
+                message: mensaje,
+                to_email: 'deislersaid1418@gmail.com'
+            };
+
+            // Send email using EmailJS
+            emailjs.send('service_1my1ljq', 'template_dst3ela', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    button.textContent = '✓ Enviado';
+                    button.style.background = 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)';
+                    
+                    setTimeout(() => {
+                        alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
+                        form.reset();
+                        button.textContent = originalText;
+                        button.style.background = '';
+                        button.style.opacity = '1';
+                        button.disabled = false;
+                    }, 1500);
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    button.textContent = '❌ Error';
+                    button.style.background = 'linear-gradient(135deg, #ff4444 0%, #cc0000 100%)';
+                    
+                    setTimeout(() => {
+                        alert('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente o contáctanos por WhatsApp.');
+                        button.textContent = originalText;
+                        button.style.background = '';
+                        button.style.opacity = '1';
+                        button.disabled = false;
+                    }, 2000);
+                });
         }
 
         // Smooth scroll for navigation links
@@ -887,7 +926,7 @@
 
         // Observe all animatable elements
         document.addEventListener('DOMContentLoaded', () => {
-            const elements = document.querySelectorAll('.service-card, .portafolio-item, .stat-item, .contact-info, form');
+            const elements = document.querySelectorAll('.service-card, .portfolio-item, .stat-item, .contact-info, form');
             
             elements.forEach((el, index) => {
                 el.style.opacity = '0';
@@ -950,8 +989,8 @@
             lastScroll = currentScroll;
         });
 
-        // portafolio item click effect
-        document.querySelectorAll('.portafolio-item').forEach(item => {
+        // Portfolio item click effect
+        document.querySelectorAll('.portfolio-item').forEach(item => {
             item.addEventListener('click', function() {
                 this.style.transform = 'scale(0.98)';
                 setTimeout(() => {
