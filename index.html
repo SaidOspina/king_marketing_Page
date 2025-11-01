@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dqaxadodm/image/upload/v1762022642/c0392d05-74c5-48bf-aee2-800155467a5f_p9qphw.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="https://res.cloudinary.com/dqaxadodm/image/upload/v1762022642/c0392d05-74c5-48bf-aee2-800155467a5f_p9qphw.ico">
+    <link rel="apple-touch-icon" href="https://res.cloudinary.com/dqaxadodm/image/upload/v1762022642/c0392d05-74c5-48bf-aee2-800155467a5f_p9qphw.ico">
     <title>Marketing Pro - Impulsa tu Negocio</title>
     <style>
         * {
@@ -342,14 +346,14 @@
             line-height: 1.8;
         }
 
-        /* Portfolio */
-        .portfolio-grid {
+        /* portafolio */
+        .portafolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2.5rem;
         }
 
-        .portfolio-item {
+        .portafolio-item {
             position: relative;
             border-radius: 20px;
             overflow: hidden;
@@ -358,12 +362,12 @@
             cursor: pointer;
         }
 
-        .portfolio-item:hover {
+        .portafolio-item:hover {
             transform: scale(1.05) translateY(-10px);
             box-shadow: 0 20px 50px rgba(255, 215, 0, 0.4);
         }
 
-        .portfolio-item img {
+        .portafolio-item img {
             width: 100%;
             height: 350px;
             object-fit: cover;
@@ -371,11 +375,11 @@
             transition: transform 0.4s;
         }
 
-        .portfolio-item:hover img {
+        .portafolio-item:hover img {
             transform: scale(1.1);
         }
 
-        .portfolio-overlay {
+        .portafolio-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
@@ -387,11 +391,11 @@
             transition: transform 0.4s;
         }
 
-        .portfolio-item:hover .portfolio-overlay {
+        .portafolio-item:hover .portafolio-overlay {
             transform: translateY(0);
         }
 
-        .portfolio-overlay h3 {
+        .portafolio-overlay h3 {
             color: #FFD700;
             margin-bottom: 0.8rem;
             font-size: 1.8rem;
@@ -617,7 +621,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .portfolio-grid {
+            .portafolio-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -673,7 +677,7 @@
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#portafolio">portafolio</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
@@ -749,26 +753,26 @@
         </div>
     </div>
 
-    <section id="portfolio">
+    <section id="portafolio">
         <h2>Casos de Éxito</h2>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
+        <div class="portafolio-grid">
+            <div class="portafolio-item">
                 <img src="https://res.cloudinary.com/dqaxadodm/image/upload/v1761000281/feliz-pareja-hablando-con-un-concesionario-de-automoviles_lrxznh.jpg" alt="Proyecto 1">
-                <div class="portfolio-overlay">
+                <div class="portafolio-overlay">
                     <h3>Sector Automotriz</h3>
                     <p>Aumentamos las ventas en un 150% mediante campañas digitales segmentadas y estrategias de contenido.</p>
                 </div>
             </div>
-            <div class="portfolio-item">
+            <div class="portafolio-item">
                 <img src="https://res.cloudinary.com/dqaxadodm/image/upload/v1760647247/colegas-trabajando-juntos-en-una-oficina-de-call-center_1_udce8u.jpg" alt="Proyecto 2">
-                <div class="portfolio-overlay">
+                <div class="portafolio-overlay">
                     <h3>Call Center Solutions</h3>
                     <p>Optimizamos la captación de leads generando un incremento del 200% en conversiones cualificadas.</p>
                 </div>
             </div>
-            <div class="portfolio-item">
+            <div class="portafolio-item">
                 <img src="https://res.cloudinary.com/dqaxadodm/image/upload/v1760646801/joven-pareja-feliz-abrazandose-despues-de-una-exitosa-reunion-con-su-agente-inmobiliario_ys22qt.jpg" alt="Proyecto 3">
-                <div class="portfolio-overlay">
+                <div class="portafolio-overlay">
                     <h3>Sector Inmobiliario</h3>
                     <p>Desarrollamos una estrategia integral que triplicó las consultas y cerró más negocios en 6 meses.</p>
                 </div>
@@ -926,7 +930,7 @@
 
         // Observe all animatable elements
         document.addEventListener('DOMContentLoaded', () => {
-            const elements = document.querySelectorAll('.service-card, .portfolio-item, .stat-item, .contact-info, form');
+            const elements = document.querySelectorAll('.service-card, .portafolio-item, .stat-item, .contact-info, form');
             
             elements.forEach((el, index) => {
                 el.style.opacity = '0';
@@ -989,8 +993,8 @@
             lastScroll = currentScroll;
         });
 
-        // Portfolio item click effect
-        document.querySelectorAll('.portfolio-item').forEach(item => {
+        // portafolio item click effect
+        document.querySelectorAll('.portafolio-item').forEach(item => {
             item.addEventListener('click', function() {
                 this.style.transform = 'scale(0.98)';
                 setTimeout(() => {
