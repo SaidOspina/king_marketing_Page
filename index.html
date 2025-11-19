@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dqaxadodm/image/upload/v1762022642/c0392d05-74c5-48bf-aee2-800155467a5f_p9qphw.ico">
-    <link rel="shortcut icon" type="image/x-icon" href="https://res.cloudinary.com/dqaxadodm/image/upload/v1762022642/c0392d05-74c5-48bf-aee2-800155467a5f_p9qphw.ico">
-    <link rel="apple-touch-icon" href="https://res.cloudinary.com/dqaxadodm/image/upload/v1762022642/c0392d05-74c5-48bf-aee2-800155467a5f_p9qphw.ico">
-    <title>Marketing Pro - Impulsa tu Negocio</title>
+    <title>King Marketing - Expertos en Marketing Digital</title>
     <style>
         * {
             margin: 0;
@@ -22,16 +19,26 @@
             overflow-x: hidden;
         }
 
+        /* Variables */
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #1a1a1a;
+            --accent-color: #2b2b2b;
+            --gold-color: #FFD700;
+            --gold-dark: #FFA500;
+            --light-bg: #f8f9fa;
+        }
+
         /* Header */
         header {
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-            color: #FFD700;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
             backdrop-filter: blur(10px);
         }
 
@@ -39,35 +46,44 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
-        .logo-container {
+        .logo {
             display: flex;
             align-items: center;
+            gap: 0.5rem;
             animation: slideInLeft 0.8s ease;
         }
 
-        .logo {
+        .logo img {
             height: 50px;
             width: auto;
             transition: transform 0.3s;
         }
 
-        .logo:hover {
+        .logo img:hover {
             transform: scale(1.1) rotate(5deg);
         }
 
-        nav ul {
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
             display: flex;
             list-style: none;
             gap: 2rem;
         }
 
-        nav a {
-            color: #FFD700;
+        .nav-links a {
+            color: white;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
@@ -75,7 +91,7 @@
             padding: 0.5rem 0;
         }
 
-        nav a::after {
+        .nav-links a::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -86,63 +102,29 @@
             transition: width 0.3s;
         }
 
-        nav a:hover::after {
+        .nav-links a:hover::after {
             width: 100%;
         }
 
-        nav a:hover {
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-        }
-
-        /* WhatsApp Float Button */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background: #25D366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-            z-index: 1000;
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
             cursor: pointer;
-            transition: all 0.3s;
-            animation: pulse 2s infinite;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
-        }
-
-        .whatsapp-float svg {
-            width: 35px;
-            height: 35px;
-            fill: white;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-            }
-            50% {
-                box-shadow: 0 4px 30px rgba(37, 211, 102, 0.8);
-            }
         }
 
         /* Hero Section */
         .hero {
             margin-top: 70px;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                        url('https://res.cloudinary.com/dqaxadodm/image/upload/v1761000281/feliz-pareja-hablando-con-un-concesionario-de-automoviles_lrxznh.jpg');
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+                        url('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1600&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             color: white;
-            padding: 10rem 2rem;
+            padding: 12rem 2rem;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -155,7 +137,7 @@
             left: -100%;
             width: 200%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.15), transparent);
             animation: shine 3s infinite;
         }
 
@@ -165,26 +147,27 @@
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 4.5rem;
             margin-bottom: 1rem;
             animation: fadeInUp 1s ease;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-            color: #FFD700;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-bottom: 2rem;
             animation: fadeInUp 1s ease 0.2s;
             animation-fill-mode: both;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
         }
 
         .cta-button {
             display: inline-block;
-            background: #FFD700;
-            color: #000000;
-            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000;
+            padding: 1.3rem 3.5rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
@@ -192,32 +175,13 @@
             transition: all 0.3s;
             animation: fadeInUp 1s ease 0.4s;
             animation-fill-mode: both;
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(0, 0, 0, 0.1);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .cta-button:hover::before {
-            width: 300px;
-            height: 300px;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
         }
 
         .cta-button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.6);
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.7);
+            background: linear-gradient(135deg, #FFA500, #FFD700);
         }
 
         @keyframes fadeInUp {
@@ -245,76 +209,285 @@
         /* Sections */
         section {
             padding: 6rem 2rem;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
-        h2 {
+        .section-title {
             text-align: center;
             font-size: 3rem;
             margin-bottom: 3rem;
-            color: #000;
+            color: var(--primary-color);
             position: relative;
             animation: fadeIn 1s ease;
         }
 
-        h2::after {
+        .section-title::after {
             content: '';
             display: block;
             width: 100px;
             height: 5px;
-            background: linear-gradient(90deg, #FFD700, #000);
+            background: linear-gradient(90deg, #FFD700, #FFA500);
             margin: 1rem auto;
             border-radius: 3px;
-            animation: expandWidth 1s ease;
         }
 
-        @keyframes expandWidth {
-            from { width: 0; }
-            to { width: 100px; }
+        /* Video Section */
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .video-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s;
         }
 
-        /* Services */
+        .video-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(255, 215, 0, 0.3);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-info {
+            padding: 1.5rem;
+        }
+
+        .video-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Featured Clients */
+        .featured-clients {
+            background: var(--light-bg);
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+            border-radius: 20px;
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            align-items: center;
+            text-align: center;
+        }
+
+        .client-logo {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .client-logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+        }
+
+        .client-logo img {
+            max-width: 100%;
+            max-height: 80px;
+            object-fit: contain;
+        }
+
+        /* Client Catalog */
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .catalog-item {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .catalog-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.2);
+        }
+
+        .catalog-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Form */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 4rem;
+            margin: 4rem 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 1rem;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #FFD700;
+            background: rgba(255,255,255,0.15);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000;
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
+            background: linear-gradient(135deg, #FFA500, #FFD700);
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            background: rgba(255,255,255,0.1);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+        }
+
+        /* Stats */
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 5rem 2rem;
+            margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+            color: #FFD700;
+        }
+
+        /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2.5rem;
         }
 
         .service-card {
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            background: white;
             padding: 2.5rem;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            text-align: center;
+            transition: all 0.4s;
             border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
-            transition: left 0.5s;
-        }
-
-        .service-card:hover::before {
-            left: 100%;
         }
 
         .service-card:hover {
-            transform: translateY(-15px) scale(1.02);
+            transform: translateY(-10px);
             box-shadow: 0 20px 50px rgba(255, 215, 0, 0.3);
             border-color: #FFD700;
         }
@@ -322,408 +495,111 @@
         .service-icon {
             font-size: 4rem;
             margin-bottom: 1rem;
-            transition: transform 0.4s;
             display: inline-block;
+            transition: transform 0.4s;
         }
 
         .service-card:hover .service-icon {
             transform: rotateY(360deg) scale(1.2);
         }
 
-        .service-card h3 {
-            color: #000;
-            margin-bottom: 1rem;
-            font-size: 1.6rem;
-            transition: color 0.3s;
+        .service-price {
+            font-size: 2.5rem;
+            color: var(--gold-color);
+            font-weight: bold;
+            margin: 1rem 0;
         }
 
-        .service-card:hover h3 {
+        .service-features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .service-features li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .service-features li:before {
+            content: "✓ ";
             color: #FFD700;
+            font-weight: bold;
+            margin-right: 0.5rem;
         }
 
-        .service-card p {
-            color: #555;
-            line-height: 1.8;
-        }
-
-        /* portafolio */
-        .portafolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .portafolio-item {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: all 0.4s;
-            cursor: pointer;
-        }
-
-        .portafolio-item:hover {
-            transform: scale(1.05) translateY(-10px);
-            box-shadow: 0 20px 50px rgba(255, 215, 0, 0.4);
-        }
-
-        .portafolio-item img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.4s;
-        }
-
-        .portafolio-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .portafolio-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.7), transparent);
-            color: white;
-            padding: 2.5rem;
-            transform: translateY(80%);
-            transition: transform 0.4s;
-        }
-
-        .portafolio-item:hover .portafolio-overlay {
-            transform: translateY(0);
-        }
-
-        .portafolio-overlay h3 {
-            color: #FFD700;
-            margin-bottom: 0.8rem;
-            font-size: 1.8rem;
-        }
-
-        /* Stats */
-        .stats {
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-            color: white;
-            padding: 5rem 2rem;
-            margin: 4rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stats::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .stat-item {
-            transition: transform 0.3s;
-        }
-
-        .stat-item:hover {
-            transform: scale(1.1);
-        }
-
-        .stat-item h3 {
-            font-size: 4rem;
-            margin-bottom: 0.5rem;
-            color: #FFD700;
-            animation: countUp 2s ease-out;
-        }
-
-        @keyframes countUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .stat-item p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        /* Contact */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        .contact-info {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            animation: slideInLeft 0.8s ease;
-        }
-
-        .contact-info h3 {
-            color: #000;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-        }
-
-        .contact-item {
+        /* WhatsApp & Chatbot Float Buttons */
+        .float-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
             display: flex;
-            align-items: center;
-            margin-bottom: 2rem;
-            gap: 1.5rem;
-            transition: transform 0.3s;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 999;
         }
 
-        .contact-item:hover {
-            transform: translateX(10px);
-        }
-
-        .contact-icon {
-            font-size: 2rem;
-            color: #FFD700;
-            background: #000;
-            width: 50px;
-            height: 50px;
+        .whatsapp-float {
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
-            transition: transform 0.3s;
-        }
-
-        .contact-item:hover .contact-icon {
-            transform: rotate(360deg);
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            animation: fadeInUp 0.8s ease;
-        }
-
-        input, textarea {
-            padding: 1.2rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 15px;
-            font-size: 1rem;
-            transition: all 0.3s;
-            background: #f8f9fa;
-        }
-
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: #FFD700;
-            background: white;
-            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.2);
-            transform: translateY(-2px);
-        }
-
-        textarea {
-            min-height: 180px;
-            resize: vertical;
-        }
-
-        button {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-            color: #000;
-            padding: 1.2rem 2rem;
-            border: none;
-            border-radius: 15px;
-            font-size: 1.2rem;
-            font-weight: bold;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+            animation: pulse 2s infinite;
         }
 
-        button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.5);
-            background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
+        .whatsapp-float:hover {
+            transform: scale(1.1);
         }
 
-        button:active {
-            transform: translateY(-2px);
+        .whatsapp-float svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
         }
 
-        /* Footer */
-        footer {
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-            color: #FFD700;
-            text-align: center;
-            padding: 3rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #FFD700, #000, #FFD700);
-        }
-
-        footer p {
-            margin: 0.5rem 0;
-            font-size: 1.1rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero {
-                padding: 6rem 1.5rem;
-                background-attachment: scroll;
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
             }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            nav ul {
-                gap: 1rem;
-                font-size: 0.9rem;
-            }
-
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-
-            .portafolio-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                bottom: 20px;
-                right: 20px;
-            }
-
-            .whatsapp-float svg {
-                width: 28px;
-                height: 28px;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            section {
-                padding: 4rem 1.5rem;
+            50% {
+                box-shadow: 0 4px 30px rgba(37, 211, 102, 0.8);
             }
         }
 
-        @media (max-width: 480px) {
-            nav {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .logo {
-                height: 40px;
-            }
-        }
         /* Chatbot Styles */
         .chatbot-container {
             position: fixed;
-            bottom: 5px;
-            left: 30px;   /* <-- AHORA A LA IZQUIERDA */
+            bottom: 30px;
+            left: 30px;
             z-index: 999;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .chatbot-button {
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            background: linear-gradient(135deg, #FFD700, #FFA500);
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.5);
             transition: all 0.3s;
-            position: relative;
         }
 
         .chatbot-button:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 30px rgba(255, 215, 0, 0.6);
         }
 
         .chatbot-button svg {
             width: 30px;
             height: 30px;
             fill: #000;
-        }
-
-        .chatbot-badge {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background: #ff4444;
-            color: white;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            display: none;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .chatbot-badge.show {
-            display: flex;
-            animation: bounce 0.5s;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
         }
 
         .chatbot-window {
@@ -757,18 +633,12 @@
         }
 
         .chatbot-header {
-            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
-            color: #FFD700;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
             padding: 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-        }
-
-        .chatbot-header-info {
-            display: flex;
-            align-items: center;
-            gap: 12px;
         }
 
         .chatbot-avatar {
@@ -782,56 +652,6 @@
             font-size: 20px;
         }
 
-        .chatbot-status {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .chatbot-name {
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        .chatbot-online {
-            font-size: 12px;
-            color: #4caf50;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background: #4caf50;
-            border-radius: 50%;
-            animation: pulse-dot 2s infinite;
-        }
-
-        @keyframes pulse-dot {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        .chatbot-close {
-            background: none;
-            border: none;
-            color: #FFD700;
-            font-size: 24px;
-            cursor: pointer;
-            padding: 0;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.3s;
-        }
-
-        .chatbot-close:hover {
-            transform: rotate(90deg);
-        }
-
         .chatbot-messages {
             flex: 1;
             overflow-y: auto;
@@ -842,36 +662,11 @@
             gap: 12px;
         }
 
-        .chatbot-messages::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        .chatbot-messages::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        .chatbot-messages::-webkit-scrollbar-thumb {
-            background: #FFD700;
-            border-radius: 3px;
-        }
-
         .message {
             max-width: 75%;
             padding: 12px 16px;
             border-radius: 18px;
             animation: fadeIn 0.3s ease;
-            word-wrap: break-word;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .message.bot {
@@ -883,13 +678,9 @@
 
         .message.user {
             align-self: flex-end;
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            background: linear-gradient(135deg, #FFD700, #FFA500);
             color: #000;
             font-weight: 500;
-        }
-
-        .message.bot strong {
-            color: #000;
         }
 
         .typing-indicator {
@@ -900,7 +691,6 @@
             border-radius: 18px;
             align-self: flex-start;
             max-width: 60px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .typing-indicator span {
@@ -945,16 +735,10 @@
             border-radius: 25px;
             font-size: 14px;
             outline: none;
-            transition: all 0.3s;
-        }
-
-        .chatbot-input:focus {
-            border-color: #FFD700;
-            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
         }
 
         .chatbot-send {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            background: linear-gradient(135deg, #FFD700, #FFA500);
             border: none;
             width: 45px;
             height: 45px;
@@ -963,22 +747,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s;
-        }
-
-        .chatbot-send:hover {
-            transform: scale(1.1);
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
-        }
-
-        .chatbot-send:active {
-            transform: scale(0.95);
-        }
-
-        .chatbot-send svg {
-            width: 20px;
-            height: 20px;
-            fill: #000;
         }
 
         .quick-replies {
@@ -991,7 +759,7 @@
 
         .quick-reply {
             padding: 8px 16px;
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            background: linear-gradient(135deg, #FFD700, #FFA500);
             border: none;
             border-radius: 20px;
             cursor: pointer;
@@ -999,7 +767,6 @@
             font-weight: 600;
             color: #000;
             transition: all 0.3s;
-            box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
         }
 
         .quick-reply:hover {
@@ -1007,180 +774,705 @@
             box-shadow: 0 4px 12px rgba(255, 215, 0, 0.5);
         }
 
-        .quick-reply:active {
-            transform: translateY(0);
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 3rem;
         }
 
         /* Responsive */
-        @media (max-width: 480px) {
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary-color);
+                flex-direction: column;
+                padding: 2rem;
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
             .chatbot-window {
                 width: calc(100vw - 20px);
                 height: calc(100vh - 100px);
-                bottom: 80px;
-                left: 10px;   /* <-- AHORA A LA IZQUIERDA */
             }
 
-            .chatbot-container {
-                left: 10px;   /* <-- AHORA A LA IZQUIERDA */
+            .section-title {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <nav>
-            <div class="logo-container">
-                <img src="https://res.cloudinary.com/dqaxadodm/image/upload/v1761943016/67cbec94-ea43-4c40-85b3-6c66a2ebc5b1.png" alt="Logo" class="logo">
-            </div>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#portafolio">portafolio</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+            <div class="logo">👑 KING MARKETING</div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio" onclick="navigateTo('home')">Inicio</a></li>
+                <li><a href="#servicios" onclick="navigateTo('services')">Servicios</a></li>
+                <li><a href="#nosotros" onclick="navigateTo('about')">Nosotros</a></li>
+                <li><a href="#contacto" onclick="navigateTo('contact')">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/573503899157" target="_blank" class="whatsapp-float" aria-label="Contactar por WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-        </svg>
-    </a>
+    <!-- Main Content Container -->
+    <div id="mainContent">
+        <!-- HOME PAGE -->
+        <div id="homePage" class="page-content">
+            <!-- Hero Section -->
+            <section class="hero" id="inicio">
+                <h1>Domina el Mercado Digital</h1>
+                <p>Estrategias de marketing que convierten tu marca en líder</p>
+                <a href="#contacto" class="cta-button">Comienza Tu Reino Digital</a>
+            </section>
 
-    <section class="hero" id="inicio">
-        <h1>Impulsa tu Negocio al Siguiente Nivel</h1>
-        <p>Estrategias de marketing digital que generan resultados reales</p>
-        <a href="#contacto" class="cta-button">Comienza Ahora</a>
-    </section>
+            <!-- Videos Section -->
+            <section>
+                <h2 class="section-title">📹 Nuestros Casos de Éxito</h2>
+                <div class="videos-grid">
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3>Campaña Digital para Empresa Automotriz</h3>
+                            <p>+250% incremento en ventas online</p>
+                        </div>
+                    </div>
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3>Transformación Digital Retail</h3>
+                            <p>500K+ nuevos clientes captados</p>
+                        </div>
+                    </div>
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3>Estrategia de Contenido B2B</h3>
+                            <p>ROI de 450% en 6 meses</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-    <section id="servicios">
-        <h2>Nuestros Servicios</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">📱</div>
-                <h3>Marketing Digital</h3>
-                <p>Estrategias integrales en redes sociales, SEO y SEM para maximizar tu presencia online y atraer más clientes.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🎨</div>
-                <h3>Branding & Diseño</h3>
-                <p>Creamos identidades visuales impactantes que conectan con tu audiencia y diferencian tu marca.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">📊</div>
-                <h3>Análisis de Datos</h3>
-                <p>Tomamos decisiones basadas en datos para optimizar tus campañas y mejorar el ROI constantemente.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">💡</div>
-                <h3>Estrategia de Contenido</h3>
-                <p>Desarrollamos contenido relevante y atractivo que genera engagement y convierte visitantes en clientes.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🚀</div>
-                <h3>Growth Marketing</h3>
-                <p>Implementamos estrategias de crecimiento acelerado para escalar tu negocio de forma sostenible.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">👥</div>
-                <h3>Consultoría</h3>
-                <p>Asesoramiento experto personalizado para alcanzar tus objetivos de negocio de manera efectiva.</p>
-            </div>
+            <!-- Featured Clients -->
+            <section class="featured-clients">
+                <h2 class="section-title">🏆 Clientes Destacados</h2>
+                <div class="clients-grid">
+                    <div class="client-logo">
+                        <span style="font-size: 2rem; font-weight: bold; color: #1a1a2e;">COCA-COLA</span>
+                    </div>
+                    <div class="client-logo">
+                        <span style="font-size: 2rem; font-weight: bold; color: #0066cc;">SAMSUNG</span>
+                    </div>
+                    <div class="client-logo">
+                        <span style="font-size: 2rem; font-weight: bold; color: #ff0000;">TOYOTA</span>
+                    </div>
+                    <div class="client-logo">
+                        <span style="font-size: 2rem; font-weight: bold; color: #0088cc;">MICROSOFT</span>
+                    </div>
+                    <div class="client-logo">
+                        <span style="font-size: 2rem; font-weight: bold; color: #ff5722;">NIKE</span>
+                    </div>
+                    <div class="client-logo">
+                        <span style="font-size: 2rem; font-weight: bold; color: #4285f4;">GOOGLE</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats Section -->
+            <section class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>800+</h3>
+                        <p>Clientes Satisfechos</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>2500+</h3>
+                        <p>Proyectos Exitosos</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>98%</h3>
+                        <p>Tasa de Retención</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>15+</h3>
+                        <p>Años de Experiencia</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Client Catalog -->
+            <section>
+                <h2 class="section-title">📊 Catálogo de Clientes por Sector</h2>
+                <div class="catalog-grid">
+                    <div class="catalog-item">
+                        <div class="catalog-icon">🚗</div>
+                        <h3>Automotriz</h3>
+                        <p>150+ Concesionarios<br>25+ Marcas Internacionales</p>
+                    </div>
+                    <div class="catalog-item">
+                        <div class="catalog-icon">🏢</div>
+                        <h3>Corporativo</h3>
+                        <p>200+ Empresas B2B<br>Fortune 500 Companies</p>
+                    </div>
+                    <div class="catalog-item">
+                        <div class="catalog-icon">🏠</div>
+                        <h3>Inmobiliario</h3>
+                        <p>80+ Desarrollos<br>+$500M en Ventas</p>
+                    </div>
+                    <div class="catalog-item">
+                        <div class="catalog-icon">🛍️</div>
+                        <h3>Retail</h3>
+                        <p>300+ Tiendas<br>E-commerce Leaders</p>
+                    </div>
+                    <div class="catalog-item">
+                        <div class="catalog-icon">🍔</div>
+                        <h3>Restaurantes</h3>
+                        <p>120+ Establecimientos<br>Cadenas Nacionales</p>
+                    </div>
+                    <div class="catalog-item">
+                        <div class="catalog-icon">💪</div>
+                        <h3>Fitness & Wellness</h3>
+                        <p>60+ Gimnasios<br>Marcas Premium</p>
+                    </div>
+                    <div class="catalog-item">
+                        <div class="catalog-icon">🎓</div>
+                        <h3>Educación</h3>
+                        <p>45+ Instituciones<br>Universidades Top</p>
+                    </div>
+                    <div class="catalog-item">
+                        <div class="catalog-icon">⚕️</div>
+                        <h3>Salud</h3>
+                        <p>70+ Clínicas<br>Hospitales Líderes</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Form Home -->
+            <section class="contact-section">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>💬 Hablemos de Tu Proyecto</h3>
+                        <p style="margin-bottom: 2rem; font-size: 1.1rem;">
+                            Estamos listos para llevar tu marca al siguiente nivel. 
+                            Completa el formulario y un experto te contactará en menos de 24 horas.
+                        </p>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <strong>Oficina Principal</strong><br>
+                                Av. Empresarial 456, Piso 10<br>
+                                Ciudad de México
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <strong>Email</strong><br>
+                                info@kingmarketing.com<br>
+                                ventas@kingmarketing.com
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div>
+                                <strong>WhatsApp</strong><br>
+                                +57 350 389 9157
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form" onsubmit="handleContactForm(event)">
+                        <div class="form-group">
+                            <label>Nombre Completo *</label>
+                            <input type="text" name="nombre" placeholder="Juan Pérez" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" name="email" placeholder="tu@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Teléfono *</label>
+                            <input type="tel" name="telefono" placeholder="+57 300 123 4567" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Servicio de Interés *</label>
+                            <select name="servicio" required>
+                                <option value="">Selecciona un servicio</option>
+                                <option value="starter">Plan Starter</option>
+                                <option value="professional">Plan Professional</option>
+                                <option value="enterprise">Plan Enterprise</option>
+                                <option value="custom">Solución Personalizada</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Mensaje</label>
+                            <textarea name="mensaje" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Enviar Solicitud</button>
+                    </form>
+                </div>
+            </section>
         </div>
-    </section>
 
-    <div class="stats">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <h3>500+</h3>
-                <p>Clientes Satisfechos</p>
-            </div>
-            <div class="stat-item">
-                <h3>1200+</h3>
-                <p>Proyectos Completados</p>
-            </div>
-            <div class="stat-item">
-                <h3>95%</h3>
-                <p>Tasa de Satisfacción</p>
-            </div>
-            <div class="stat-item">
-                <h3>10+</h3>
-                <p>Años de Experiencia</p>
-            </div>
+        <!-- SERVICES PAGE -->
+        <div id="servicesPage" class="page-content" style="display: none;">
+            <section class="hero" style="padding: 8rem 2rem;">
+                <h1>Nuestros Servicios y Planes</h1>
+                <p>Soluciones de marketing diseñadas para cada etapa de tu negocio</p>
+            </section>
+
+            <section>
+                <h2 class="section-title">🎯 Planes de Marketing Digital</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🚀</div>
+                        <h3>Plan Starter</h3>
+                        <div class="service-price">$999<span style="font-size: 1rem;">/mes</span></div>
+                        <p>Ideal para empresas que inician su presencia digital</p>
+                        <ul class="service-features">
+                            <li>Gestión de 2 Redes Sociales</li>
+                            <li>12 Publicaciones Mensuales</li>
+                            <li>Community Management Básico</li>
+                            <li>Reportes Mensuales</li>
+                            <li>Diseño de Contenido Visual</li>
+                            <li>SEO Básico</li>
+                        </ul>
+                        <button class="cta-button" style="width: 100%; margin-top: 1rem;" onclick="openChatWithPlan('Starter')">Contratar Ahora</button>
+                    </div>
+
+                    <div class="service-card" style="border: 3px solid var(--gold-color);">
+                        <div style="background: var(--gold-color); color: white; padding: 0.5rem; border-radius: 10px; margin-bottom: 1rem; font-weight: bold;">
+                            ⭐ MÁS POPULAR
+                        </div>
+                        <div class="service-icon">👑</div>
+                        <h3>Plan Professional</h3>
+                        <div class="service-price">$2,499<span style="font-size: 1rem;">/mes</span></div>
+                        <p>Para empresas que buscan crecimiento acelerado</p>
+                        <ul class="service-features">
+                            <li>Gestión de 4 Redes Sociales</li>
+                            <li>25 Publicaciones Mensuales</li>
+                            <li>Community Management Completo</li>
+                            <li>Campañas Publicitarias (Ads)</li>
+                            <li>Email Marketing</li>
+                            <li>SEO Avanzado</li>
+                            <li>Landing Pages</li>
+                            <li>Estrategia de Contenido</li>
+                            <li>Reportes Semanales</li>
+                            <li>Soporte Prioritario</li>
+                        </ul>
+                        <button class="cta-button" style="width: 100%; margin-top: 1rem;" onclick="openChatWithPlan('Professional')">Contratar Ahora</button>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">💎</div>
+                        <h3>Plan Enterprise</h3>
+                        <div class="service-price">$4,999<span style="font-size: 1rem;">/mes</span></div>
+                        <p>Solución integral para grandes corporativos</p>
+                        <ul class="service-features">
+                            <li>Gestión Ilimitada de Redes</li>
+                            <li>Publicaciones Ilimitadas</li>
+                            <li>Equipo Dedicado 24/7</li>
+                            <li>Campañas Multimedia Completas</li>
+                            <li>Marketing Automation</li>
+                            <li>CRM Integration</li>
+                            <li>Analítica Avanzada & BI</li>
+                            <li>Influencer Marketing</li>
+                            <li>Video Marketing</li>
+                            <li>Consultoría Estratégica</li>
+                            <li>Growth Hacking</li>
+                            <li>Desarrollo Web/App</li>
+                        </ul>
+                        <button class="cta-button" style="width: 100%; margin-top: 1rem;" onclick="openChatWithPlan('Enterprise')">Contratar Ahora</button>
+                    </div>
+                </div>
+            </section>
+
+            <section style="margin-top: 4rem;">
+                <h2 class="section-title">🛠️ Servicios Adicionales</h2>
+                <div class="catalog-grid">
+                    <div class="catalog-item">
+                        <div class="catalog-icon">🎨</div>
+                        <h3>Branding & Diseño</h3>
+                        <p>Desde $1,500</p>
+                        <p style="margin-top: 1rem; font-size: 0.9rem;">Logo, identidad visual, manual de marca</p>
+                    </div>
+                    <div class="catalog-item">
+                        <div class="catalog-icon">📹</div>
+                        <h3>Producción Audiovisual</h3>
+                        <p>Desde $2,000</p>
+                        <p style="margin-top: 1rem; font-size: 0.9rem;">Videos corporativos, spots publicitarios</p>
+                    </div>
+                    <div class="catalog-item">
+                        <div class="catalog-icon">📸</div>
+                        <h3>Fotografía Profesional</h3>
+                        <p>Desde $500</p>
+                        <p style="margin-top: 1rem; font-size: 0.9rem;">Sesiones de producto, eventos, corporativo</p>
+                    </div>
+                    <div class="catalog-item">
+                        <div class="catalog-icon">💻</div>
+                        <h3>Desarrollo Web</h3>
+                        <p>Desde $3,000</p>
+                        <p style="margin-top: 1rem; font-size: 0.9rem;">Sitios web, e-commerce, aplicaciones</p>
+                    </div>
+                    <div class="catalog-item">
+                        <div class="catalog-icon">📊</div>
+                        <h3>Consultoría Digital</h3>
+                        <p>Desde $1,000</p>
+                        <p style="margin-top: 1rem; font-size: 0.9rem;">Auditoría, estrategia, capacitación</p>
+                    </div>
+                    <div class="catalog-item">
+                        <div class="catalog-icon">🎯</div>
+                        <h3>Performance Marketing</h3>
+                        <p>10-20% del presupuesto</p>
+                        <p style="margin-top: 1rem; font-size: 0.9rem;">Google Ads, Facebook Ads, TikTok Ads</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ABOUT PAGE -->
+        <div id="aboutPage" class="page-content" style="display: none;">
+            <section class="hero" style="padding: 8rem 2rem;">
+                <h1>Sobre King Marketing</h1>
+                <p>15 años transformando marcas en líderes digitales</p>
+            </section>
+
+            <section>
+                <h2 class="section-title">🏆 Nuestra Historia</h2>
+                <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+                    <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem;">
+                        Fundada en 2010, <strong>King Marketing</strong> nació con una misión clara: democratizar el marketing digital 
+                        y hacer que empresas de todos los tamaños puedan competir en la era digital. Con más de 800 clientes satisfechos 
+                        y 2,500 proyectos exitosos, nos hemos consolidado como la agencia líder en marketing digital de habla hispana.
+                    </p>
+                    <p style="font-size: 1.2rem; line-height: 1.8;">
+                        Nuestro equipo de +50 especialistas trabaja día a día para crear estrategias innovadoras que generan resultados 
+                        reales y medibles para nuestros clientes.
+                    </p>
+                </div>
+            </section>
+
+            <section class="stats-section">
+                <h2 class="section-title" style="color: white; margin-bottom: 3rem;">📈 Nuestros Números</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>$50M+</h3>
+                        <p>Facturación Gestionada</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>15+</h3>
+                        <p>Países Atendidos</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>50+</h3>
+                        <p>Especialistas</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24/7</h3>
+                        <p>Soporte Continuo</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">💼 Proyectos Destacados</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🚗</div>
+                        <h3>Toyota México</h3>
+                        <p style="margin: 1rem 0;"><strong>Sector:</strong> Automotriz</p>
+                        <p style="margin-bottom: 1rem;"><strong>Duración:</strong> 3 años</p>
+                        <ul class="service-features">
+                            <li>250% aumento en leads calificados</li>
+                            <li>150% incremento en ventas online</li>
+                            <li>#1 en engagement del sector</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">🏢</div>
+                        <h3>BBVA Bancomer</h3>
+                        <p style="margin: 1rem 0;"><strong>Sector:</strong> Financiero</p>
+                        <p style="margin-bottom: 1rem;"><strong>Duración:</strong> 2 años</p>
+                        <ul class="service-features">
+                            <li>500K+ nuevas cuentas digitales</li>
+                            <li>40% reducción en CAC</li>
+                            <li>Campaña viral con 10M+ alcance</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">🏠</div>
+                        <h3>Grupo Inmobiliario ABC</h3>
+                        <p style="margin: 1rem 0;"><strong>Sector:</strong> Inmobiliario</p>
+                        <p style="margin-bottom: 1rem;"><strong>Duración:</strong> 4 años</p>
+                        <ul class="service-features">
+                            <li>$200M+ en ventas generadas</li>
+                            <li>300% ROI en campañas digitales</li>
+                            <li>Líder digital del sector</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">🛍️</div>
+                        <h3>Liverpool Department Store</h3>
+                        <p style="margin: 1rem 0;"><strong>Sector:</strong> Retail</p>
+                        <p style="margin-bottom: 1rem;"><strong>Duración:</strong> 5 años</p>
+                        <ul class="service-features">
+                            <li>180% crecimiento e-commerce</li>
+                            <li>2M+ seguidores en RRSS</li>
+                            <li>Best Social Media Campaign 2024</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">🍔</div>
+                        <h3>Cadena Restaurantes Gourmet</h3>
+                        <p style="margin: 1rem 0;"><strong>Sector:</strong> Alimentos</p>
+                        <p style="margin-bottom: 1rem;"><strong>Duración:</strong> 2 años</p>
+                        <ul class="service-features">
+                            <li>400% incremento en reservas online</li>
+                            <li>Expansión a 20 nuevas sucursales</li>
+                            <li>Estrategia de delivery exitosa</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">⚕️</div>
+                        <h3>Hospital Ángeles</h3>
+                        <p style="margin: 1rem 0;"><strong>Sector:</strong> Salud</p>
+                        <p style="margin-bottom: 1rem;"><strong>Duración:</strong> 3 años</p>
+                        <ul class="service-features">
+                            <li>350% más consultas agendadas</li>
+                            <li>Plataforma de telemedicina</li>
+                            <li>Premio a Innovación Digital</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="featured-clients" style="margin-top: 4rem;">
+                <h2 class="section-title">🤝 Empresas que Confían en Nosotros</h2>
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <div class="catalog-grid">
+                        <div class="catalog-item">
+                            <h4 style="color: var(--gold-color); margin-bottom: 0.5rem;">Fortune 500</h4>
+                            <p>Coca-Cola, Microsoft, Samsung, Google, Toyota</p>
+                        </div>
+                        <div class="catalog-item">
+                            <h4 style="color: var(--gold-color); margin-bottom: 0.5rem;">Startups Unicornio</h4>
+                            <p>Rappi, Kavak, Clip, Clara, Konfío</p>
+                        </div>
+                        <div class="catalog-item">
+                            <h4 style="color: var(--gold-color); margin-bottom: 0.5rem;">Gobierno</h4>
+                            <p>Secretaría de Turismo, Economía Digital</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- CONTACT PAGE -->
+        <div id="contactPage" class="page-content" style="display: none;">
+            <section class="hero" style="padding: 8rem 2rem;">
+                <h1>Contacta con Nosotros</h1>
+                <p>Estamos listos para impulsar tu negocio</p>
+            </section>
+
+            <section>
+                <div class="contact-grid" style="max-width: 1200px; margin: 0 auto;">
+                    <div class="contact-info" style="background: white; color: #333; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        <h3 style="color: var(--primary-color);">📍 Nuestras Oficinas</h3>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon" style="background: var(--gold-color); color: white;">🏢</div>
+                            <div>
+                                <strong>Oficina Principal - CDMX</strong><br>
+                                Av. Paseo de la Reforma 505<br>
+                                Cuauhtémoc, 06500<br>
+                                Ciudad de México
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon" style="background: var(--gold-color); color: white;">🏢</div>
+                            <div>
+                                <strong>Oficina Monterrey</strong><br>
+                                Av. Lázaro Cárdenas 2400<br>
+                                San Pedro Garza García, 66220<br>
+                                Nuevo León
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon" style="background: var(--gold-color); color: white;">📧</div>
+                            <div>
+                                <strong>Email</strong><br>
+                                info@kingmarketing.com<br>
+                                ventas@kingmarketing.com<br>
+                                soporte@kingmarketing.com
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon" style="background: var(--gold-color); color: white;">📱</div>
+                            <div>
+                                <strong>Teléfonos</strong><br>
+                                WhatsApp: +57 350 389 9157<br>
+                                Oficina CDMX: +52 55 1234 5678<br>
+                                Oficina MTY: +52 81 8765 4321
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon" style="background: var(--gold-color); color: white;">⏰</div>
+                            <div>
+                                <strong>Horario de Atención</strong><br>
+                                Lunes a Viernes: 9:00 AM - 7:00 PM<br>
+                                Sábados: 10:00 AM - 2:00 PM<br>
+                                Soporte 24/7 para clientes Enterprise
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon" style="background: var(--gold-color); color: white;">🌐</div>
+                            <div>
+                                <strong>Redes Sociales</strong><br>
+                                @KingMarketing en todas las plataformas<br>
+                                Facebook | Instagram | LinkedIn | Twitter
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" onsubmit="handleContactForm(event)">
+                        <h3 style="color: var(--primary-color); margin-bottom: 1.5rem; text-align: center;">✉️ Envíanos un Mensaje</h3>
+                        
+                        <div class="form-group">
+                            <label style="color: #333;">Nombre Completo *</label>
+                            <input type="text" name="nombre" placeholder="Juan Pérez López" required style="border-color: #ddd; color: #333;">
+                        </div>
+
+                        <div class="form-group">
+                            <label style="color: #333;">Empresa</label>
+                            <input type="text" name="empresa" placeholder="Mi Empresa S.A." style="border-color: #ddd; color: #333;">
+                        </div>
+
+                        <div class="form-group">
+                            <label style="color: #333;">Email *</label>
+                            <input type="email" name="email" placeholder="contacto@miempresa.com" required style="border-color: #ddd; color: #333;">
+                        </div>
+
+                        <div class="form-group">
+                            <label style="color: #333;">Teléfono / WhatsApp *</label>
+                            <input type="tel" name="telefono" placeholder="+52 55 1234 5678" required style="border-color: #ddd; color: #333;">
+                        </div>
+
+                        <div class="form-group">
+                            <label style="color: #333;">¿Cómo nos conociste?</label>
+                            <select name="origen" style="border-color: #ddd; color: #333;">
+                                <option value="">Selecciona una opción</option>
+                                <option value="google">Google</option>
+                                <option value="redes">Redes Sociales</option>
+                                <option value="referido">Referido</option>
+                                <option value="evento">Evento</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label style="color: #333;">Servicio de Interés</label>
+                            <select name="servicio" style="border-color: #ddd; color: #333;">
+                                <option value="">Selecciona un servicio</option>
+                                <option value="starter">Plan Starter - $999/mes</option>
+                                <option value="professional">Plan Professional - $2,499/mes</option>
+                                <option value="enterprise">Plan Enterprise - $4,999/mes</option>
+                                <option value="branding">Branding & Diseño</option>
+                                <option value="video">Producción Audiovisual</option>
+                                <option value="web">Desarrollo Web</option>
+                                <option value="consultoria">Consultoría</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label style="color: #333;">Presupuesto Aproximado</label>
+                            <select name="presupuesto" style="border-color: #ddd; color: #333;">
+                                <option value="">Selecciona un rango</option>
+                                <option value="1">$1,000 - $2,500 USD</option>
+                                <option value="2">$2,500 - $5,000 USD</option>
+                                <option value="3">$5,000 - $10,000 USD</option>
+                                <option value="4">Más de $10,000 USD</option>
+                                <option value="5">Por definir</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label style="color: #333;">Mensaje *</label>
+                            <textarea name="mensaje" placeholder="Cuéntanos sobre tu proyecto, objetivos y cómo podemos ayudarte..." required style="border-color: #ddd; color: #333;"></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Enviar Mensaje 🚀</button>
+                        
+                        <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; color: #666;">
+                            * Tiempo de respuesta: menos de 24 horas
+                        </p>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Map Section -->
+            <section style="margin-top: 4rem;">
+                <h2 class="section-title">🗺️ Encuéntranos</h2>
+                <div style="width: 100%; height: 450px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.5893473177924!2d-99.17097668509308!3d19.427029786890565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff35f5bd1563%3A0x6c366f0e2de02ff7!2sPaseo%20de%20la%20Reforma%20505%2C%20Cuauht%C3%A9moc%2C%2006500%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1sen!2smx!4v1234567890123!5m2!1sen!2smx" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </section>
         </div>
     </div>
 
-    <section id="portafolio">
-        <h2>Casos de Éxito</h2>
-        <div class="portafolio-grid">
-            <div class="portafolio-item">
-                <img src="https://res.cloudinary.com/dqaxadodm/image/upload/v1761000281/feliz-pareja-hablando-con-un-concesionario-de-automoviles_lrxznh.jpg" alt="Proyecto 1">
-                <div class="portafolio-overlay">
-                    <h3>Sector Automotriz</h3>
-                    <p>Aumentamos las ventas en un 150% mediante campañas digitales segmentadas y estrategias de contenido.</p>
-                </div>
-            </div>
-            <div class="portafolio-item">
-                <img src="https://res.cloudinary.com/dqaxadodm/image/upload/v1760647247/colegas-trabajando-juntos-en-una-oficina-de-call-center_1_udce8u.jpg" alt="Proyecto 2">
-                <div class="portafolio-overlay">
-                    <h3>Call Center Solutions</h3>
-                    <p>Optimizamos la captación de leads generando un incremento del 200% en conversiones cualificadas.</p>
-                </div>
-            </div>
-            <div class="portafolio-item">
-                <img src="https://res.cloudinary.com/dqaxadodm/image/upload/v1760646801/joven-pareja-feliz-abrazandose-despues-de-una-exitosa-reunion-con-su-agente-inmobiliario_ys22qt.jpg" alt="Proyecto 3">
-                <div class="portafolio-overlay">
-                    <h3>Sector Inmobiliario</h3>
-                    <p>Desarrollamos una estrategia integral que triplicó las consultas y cerró más negocios en 6 meses.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contacto">
-        <h2>Contáctanos</h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Información de Contacto</h3>
-                <div class="contact-item">
-                    <span class="contact-icon">📍</span>
-                    <div>
-                        <strong>Dirección</strong><br>
-                        Av. Principal 123, Ciudad
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">📧</span>
-                    <div>
-                        <strong>Email</strong><br>
-                        info@marketingpro.com
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">📱</span>
-                    <div>
-                        <strong>Teléfono</strong><br>
-                        +57 300 123 4567
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">⏰</span>
-                    <div>
-                        <strong>Horario</strong><br>
-                        Lun - Vie: 9:00 AM - 6:00 PM
-                    </div>
-                </div>
-            </div>
-            <form onsubmit="handleSubmit(event)">
-                <input type="text" placeholder="Nombre Completo" required>
-                <input type="email" placeholder="Email" required>
-                <input type="tel" placeholder="Teléfono" required>
-                <textarea placeholder="Cuéntanos sobre tu proyecto" required></textarea>
-                <button type="submit">Enviar Mensaje</button>
-            </form>
-        </div>
-    </section>
+    <!-- Float Buttons -->
+    <div class="float-buttons">
+        <a href="https://wa.me/573503899157" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+        </a>
+    </div>
 
     <!-- Chatbot Widget -->
     <div class="chatbot-container">
@@ -1189,22 +1481,21 @@
                 <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
                 <path d="M7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/>
             </svg>
-            <span class="chatbot-badge" id="chatBadge">1</span>
         </div>
 
         <div class="chatbot-window" id="chatWindow">
             <div class="chatbot-header">
-                <div class="chatbot-header-info">
-                    <div class="chatbot-avatar">🤖</div>
-                    <div class="chatbot-status">
-                        <span class="chatbot-name">Marketing Pro Bot</span>
-                        <span class="chatbot-online">
-                            <span class="status-dot"></span>
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div class="chatbot-avatar">👑</div>
+                    <div>
+                        <div style="font-weight: bold;">King Marketing Bot</div>
+                        <div style="font-size: 12px; color: #4caf50;">
+                            <span style="display: inline-block; width: 8px; height: 8px; background: #4caf50; border-radius: 50%; margin-right: 5px;"></span>
                             En línea
-                        </span>
+                        </div>
                     </div>
                 </div>
-                <button class="chatbot-close" onclick="toggleChat()">×</button>
+                <button style="background: none; border: none; color: white; font-size: 24px; cursor: pointer;" onclick="toggleChat()">×</button>
             </div>
 
             <div class="chatbot-messages" id="chatMessages"></div>
@@ -1220,7 +1511,7 @@
                     onkeypress="handleKeyPress(event)"
                 >
                 <button class="chatbot-send" onclick="sendMessage()">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: white;">
                         <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
                     </svg>
                 </button>
@@ -1228,325 +1519,178 @@
         </div>
     </div>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Marketing Pro. Todos los derechos reservados.</p>
-        <p>Transformando marcas, creando experiencias.</p>
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h3 style="margin-bottom: 1rem; font-size: 2rem;">👑 KING MARKETING</h3>
+            <p style="margin: 0.5rem 0; font-size: 1.1rem;">
+                Transformando marcas en líderes digitales
+            </p>
+            <p style="margin: 1.5rem 0; opacity: 0.9;">
+                📧 info@kingmarketing.com | 📱 +57 350 389 9157
+            </p>
+            <p style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                &copy; 2025 King Marketing. Todos los derechos reservados.
+            </p>
+        </div>
     </footer>
 
     <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function(){
-            emailjs.init("zIeqBcQvqDWK7b_66"); // Reemplaza con tu Public Key de EmailJS
-        })();
-    </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-        // Form submission handler with EmailJS
-        function handleSubmit(e) {
+        // Initialize EmailJS
+        (function(){
+            emailjs.init("zIeqBcQvqDWK7b_66");
+        })();
+
+        // Navigation System
+        function navigateTo(page) {
+            // Hide all pages
+            document.querySelectorAll('.page-content').forEach(p => p.style.display = 'none');
+            
+            // Show selected page
+            const pages = {
+                'home': 'homePage',
+                'services': 'servicesPage',
+                'about': 'aboutPage',
+                'contact': 'contactPage'
+            };
+            
+            const pageId = pages[page];
+            if (pageId) {
+                document.getElementById(pageId).style.display = 'block';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Close mobile menu if open
+            document.getElementById('navLinks').classList.remove('active');
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // Contact Form Handler
+        function handleContactForm(e) {
             e.preventDefault();
-            const button = e.target.querySelector('button');
+            const button = e.target.querySelector('button[type="submit"]');
             const originalText = button.textContent;
             const form = e.target;
             
-            // Get form data
-            const nombre = form.querySelector('input[type="text"]').value;
-            const email = form.querySelector('input[type="email"]').value;
-            const telefono = form.querySelector('input[type="tel"]').value;
-            const mensaje = form.querySelector('textarea').value;
+            const formData = {
+                nombre: form.querySelector('[name="nombre"]').value,
+                empresa: form.querySelector('[name="empresa"]')?.value || 'No especificado',
+                email: form.querySelector('[name="email"]').value,
+                telefono: form.querySelector('[name="telefono"]').value,
+                servicio: form.querySelector('[name="servicio"]')?.value || 'No especificado',
+                mensaje: form.querySelector('[name="mensaje"]')?.value || 'Sin mensaje',
+                origen: form.querySelector('[name="origen"]')?.value || 'No especificado',
+                presupuesto: form.querySelector('[name="presupuesto"]')?.value || 'No especificado'
+            };
             
             button.textContent = 'Enviando...';
-            button.style.opacity = '0.7';
             button.disabled = true;
 
-            // Prepare template parameters
             const templateParams = {
-                from_name: nombre,
-                from_email: email,
-                phone: telefono,
-                message: mensaje,
+                from_name: formData.nombre,
+                from_email: formData.email,
+                phone: formData.telefono,
+                message: `
+Empresa: ${formData.empresa}
+Servicio: ${formData.servicio}
+Origen: ${formData.origen}
+Presupuesto: ${formData.presupuesto}
+
+Mensaje:
+${formData.mensaje}
+                `,
                 to_email: 'deislersaid1418@gmail.com'
             };
 
-            // Send email using EmailJS
             emailjs.send('service_1my1ljq', 'template_dst3ela', templateParams)
                 .then(function(response) {
-                    console.log('SUCCESS!', response.status, response.text);
                     button.textContent = '✓ Enviado';
-                    button.style.background = 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)';
+                    button.style.background = '#25D366';
                     
                     setTimeout(() => {
-                        alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
+                        alert('¡Gracias por contactarnos! Nos pondremos en contacto contigo en menos de 24 horas.');
                         form.reset();
                         button.textContent = originalText;
                         button.style.background = '';
-                        button.style.opacity = '1';
                         button.disabled = false;
                     }, 1500);
                 }, function(error) {
-                    console.log('FAILED...', error);
                     button.textContent = '❌ Error';
-                    button.style.background = 'linear-gradient(135deg, #ff4444 0%, #cc0000 100%)';
+                    button.style.background = '#ff4444';
                     
                     setTimeout(() => {
                         alert('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente o contáctanos por WhatsApp.');
                         button.textContent = originalText;
                         button.style.background = '';
-                        button.style.opacity = '1';
                         button.disabled = false;
                     }, 2000);
                 });
         }
 
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const headerOffset = 80;
-                    const elementPosition = target.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Intersection Observer for scroll animations
-        const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        // Observe all animatable elements
-        document.addEventListener('DOMContentLoaded', () => {
-            const elements = document.querySelectorAll('.service-card, .portafolio-item, .stat-item, .contact-info, form');
-            
-            elements.forEach((el, index) => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(50px)';
-                el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-                observer.observe(el);
-            });
-        });
-
-        // Counter animation for stats
-        function animateCounter(element, target, duration = 2000) {
-            let current = 0;
-            const increment = target / (duration / 16);
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    element.textContent = target + '+';
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(current) + '+';
-                }
-            }, 16);
-        }
-
-        // Stats counter observer
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const statNumbers = entry.target.querySelectorAll('.stat-item h3');
-                    statNumbers.forEach(stat => {
-                        const text = stat.textContent;
-                        const number = parseInt(text.replace(/\D/g, ''));
-                        stat.textContent = '0';
-                        animateCounter(stat, number);
-                    });
-                    statsObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        const statsSection = document.querySelector('.stats');
-        if (statsSection) {
-            statsObserver.observe(statsSection);
-        }
-
-        // Header background on scroll
-        let lastScroll = 0;
-        const header = document.querySelector('header');
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 100) {
-                header.style.background = 'rgba(0, 0, 0, 0.98)';
-                header.style.backdropFilter = 'blur(10px)';
-            } else {
-                header.style.background = 'linear-gradient(135deg, #000000 0%, #1a1a1a 100%)';
-            }
-
-            lastScroll = currentScroll;
-        });
-
-        // portafolio item click effect
-        document.querySelectorAll('.portafolio-item').forEach(item => {
-            item.addEventListener('click', function() {
-                this.style.transform = 'scale(0.98)';
-                setTimeout(() => {
-                    this.style.transform = '';
-                }, 200);
-            });
-        });
-
-        // Service card tilt effect
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                const rotateX = (y - centerY) / 10;
-                const rotateY = (centerX - x) / 10;
-                
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-15px) scale(1.02)`;
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = '';
-            });
-        });
-
-        // WhatsApp button click analytics
-        document.querySelector('.whatsapp-float').addEventListener('click', () => {
-            console.log('WhatsApp button clicked');
-        });
-
-        // Form input animations
-        document.querySelectorAll('input, textarea').forEach(input => {
-            input.addEventListener('focus', function() {
-                this.parentElement.style.transform = 'scale(1.01)';
-            });
-            
-            input.addEventListener('blur', function() {
-                this.parentElement.style.transform = '';
-            });
-        });
-
-        // Parallax effect for hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero && scrolled <= hero.offsetHeight) {
-                hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
-            }
-        });
-
-        // Preload images
-        window.addEventListener('load', () => {
-            document.querySelectorAll('img').forEach(img => {
-                img.style.opacity = '0';
-                img.style.transition = 'opacity 0.5s';
-                if (img.complete) {
-                    img.style.opacity = '1';
-                } else {
-                    img.addEventListener('load', () => {
-                        img.style.opacity = '1';
-                    });
-                }
-            });
-        });
-    </script>
-    <script>
         // Chatbot Logic
         const chatState = {
             step: 'inicio',
-            data: {}
+            data: {},
+            selectedPlan: null
         };
 
         const messages = {
-            welcome: `¡Hola! 👋 Bienvenido a *Marketing Pro*
+            welcome: `¡Hola! 👋 Bienvenido a *King Marketing*
 
-Soy tu asistente virtual y estoy aquí para ayudarte.
+Soy tu asistente virtual y estoy aquí para ayudarte a encontrar la mejor solución de marketing para tu negocio.
 
-¿En qué puedo asistirte hoy?`,
-            services: `Excelente! En *Marketing Pro* ofrecemos:
-
-📱 *Marketing Digital*
-- Estrategias en redes sociales
-- SEO y SEM
-- Publicidad online
-
-🎨 *Branding & Diseño*
-- Identidad visual
-- Diseño gráfico
-- Material promocional
-
-📊 *Análisis de Datos*
-- Optimización de campañas
-- Reportes y métricas
-- Mejora continua
-
-💡 *Estrategia de Contenido*
-- Content marketing
-- Copywriting
-- Gestión de contenidos
-
-🚀 *Growth Marketing*
-- Crecimiento acelerado
-- Estrategias de conversión
-- Automatización
-
-👥 *Consultoría*
-- Asesoramiento personalizado
-- Planificación estratégica
-- Capacitación
-
-¿Qué te gustaría hacer?`,
+¿En qué puedo ayudarte hoy?`,
             
-            cases: `¡Nos encanta compartir nuestros resultados! 🏆
+            services: `¡Perfecto! En *King Marketing* tenemos planes para cada etapa de tu negocio:
 
-📈 *Sector Automotriz*
-• 150% aumento en ventas
-• Campañas digitales efectivas
-• Mayor captación de leads
+🚀 *Plan Starter* - $999/mes
+Ideal para empezar tu presencia digital
 
-🏢 *Call Center Solutions*
-• 200% incremento en conversiones
-• Optimización de procesos
-• Leads cualificados
+👑 *Plan Professional* - $2,499/mes
+Para empresas en crecimiento
 
-🏠 *Sector Inmobiliario*
-• Triplicamos las consultas
-• Más cierres de negocio
-• Estrategia integral exitosa
+💎 *Plan Enterprise* - $4,999/mes
+Solución completa para corporativos
 
-¿Te gustaría conocer más sobre algún caso?`
+¿Qué plan te interesa o quieres que te ayude a elegir?`,
+
+            whyUs: `¿Por qué elegir *King Marketing*? 👑
+
+✅ *15+ años* de experiencia
+✅ *800+ clientes* satisfechos
+✅ *98%* tasa de retención
+✅ *$50M+* en ventas generadas
+✅ Equipo de *50+ especialistas*
+✅ Soporte *24/7* 
+
+Trabajamos con empresas como Coca-Cola, Toyota, BBVA y muchas más.
+
+¿Te gustaría agendar una reunión o solicitar una cotización?`
         };
 
         const quickRepliesOptions = {
             inicio: [
-                { text: '📋 Servicios', value: '1' },
+                { text: '📋 Ver Planes', value: '1' },
                 { text: '💰 Cotización', value: '2' },
-                { text: '📅 Agendar', value: '3' },
-                { text: '🏆 Casos de Éxito', value: '4' }
+                { text: '📅 Agendar Reunión', value: '3' },
+                { text: '❓ ¿Por qué King?', value: '4' }
             ],
             servicios: [
-                { text: '💰 Cotización', value: '1' },
-                { text: '📅 Agendar reunión', value: '2' },
-                { text: '🏆 Casos de éxito', value: '3' },
-                { text: '🔙 Volver', value: '4' }
+                { text: '🚀 Plan Starter', value: 'starter' },
+                { text: '👑 Plan Professional', value: 'professional' },
+                { text: '💎 Plan Enterprise', value: 'enterprise' },
+                { text: '🔙 Volver', value: 'menu' }
+            ],
+            planes: [
+                { text: '💰 Solicitar cotización', value: 'cotizar' },
+                { text: '📅 Agendar reunión', value: 'agendar' },
+                { text: '📞 Llamar ahora', value: 'llamar' },
+                { text: '🔙 Ver otros planes', value: 'planes' }
             ]
         };
 
@@ -1554,19 +1698,13 @@ Soy tu asistente virtual y estoy aquí para ayudarte.
             setTimeout(() => {
                 addBotMessage(messages.welcome);
                 showQuickReplies('inicio');
-                showBadge();
             }, 1000);
         }
 
         function toggleChat() {
             const chatWindow = document.getElementById('chatWindow');
-            const badge = document.getElementById('chatBadge');
-            
+            chatWindow.classList.toggle('open');
             if (chatWindow.classList.contains('open')) {
-                chatWindow.classList.remove('open');
-            } else {
-                chatWindow.classList.add('open');
-                badge.classList.remove('show');
                 setTimeout(() => scrollToBottom(), 100);
             }
         }
@@ -1576,9 +1714,7 @@ Soy tu asistente virtual y estoy aquí para ayudarte.
             const messageDiv = document.createElement('div');
             messageDiv.className = `message ${isBot ? 'bot' : 'user'}`;
             
-            // Convert markdown-style bold to HTML
             text = text.replace(/\*(.*?)\*/g, '<strong>$1</strong>');
-            // Convert line breaks
             text = text.replace(/\n/g, '<br>');
             
             messageDiv.innerHTML = text;
@@ -1618,16 +1754,13 @@ Soy tu asistente virtual y estoy aquí para ayudarte.
                 const button = document.createElement('button');
                 button.className = 'quick-reply';
                 button.textContent = reply.text;
-                button.onclick = () => handleQuickReply(reply.value);
+                button.onclick = () => handleQuickReply(reply.value, reply.text);
                 container.appendChild(button);
             });
         }
 
-        function handleQuickReply(value) {
-            const replyText = quickRepliesOptions[chatState.step || 'inicio']
-                .find(r => r.value === value)?.text || value;
-            
-            addMessage(replyText, false);
+        function handleQuickReply(value, text) {
+            addMessage(text, false);
             handleUserInput(value);
         }
 
@@ -1636,118 +1769,132 @@ Soy tu asistente virtual y estoy aquí para ayudarte.
 
             switch (chatState.step) {
                 case 'inicio':
-                case 'menu_principal':
-                    if (normalizedInput === '1' || normalizedInput.includes('servicio')) {
+                    if (normalizedInput === '1' || normalizedInput.includes('plan')) {
                         addBotMessage(messages.services);
                         chatState.step = 'servicios';
                         showQuickReplies('servicios');
                     } else if (normalizedInput === '2' || normalizedInput.includes('cotiz')) {
-                        addBotMessage('Perfecto! Para brindarte una cotización personalizada necesito algunos datos:\n\n📝 ¿Cuál es tu nombre?');
+                        addBotMessage('¡Excelente! Para preparar tu cotización personalizada, necesito algunos datos:\n\n📝 ¿Cuál es tu nombre?');
                         chatState.step = 'cotizacion_nombre';
                         document.getElementById('quickReplies').innerHTML = '';
                     } else if (normalizedInput === '3' || normalizedInput.includes('agendar') || normalizedInput.includes('reunión')) {
-                        addBotMessage('¡Genial! Agendemos una reunión 📅\n\n¿Qué tipo de reunión prefieres?\n\n1️⃣ Videollamada (Google Meet/Zoom)\n2️⃣ Llamada telefónica\n3️⃣ Presencial');
-                        chatState.step = 'reunion_tipo';
+                        addBotMessage('¡Perfecto! Agendemos una reunión 📅\n\n¿Cuál es tu nombre?');
+                        chatState.step = 'reunion_nombre';
                         document.getElementById('quickReplies').innerHTML = '';
-                    } else if (normalizedInput === '4' || normalizedInput.includes('caso') || normalizedInput.includes('éxito')) {
-                        addBotMessage(messages.cases);
-                        showQuickReplies('servicios');
+                    } else if (normalizedInput === '4' || normalizedInput.includes('por qué')) {
+                        addBotMessage(messages.whyUs);
+                        showQuickReplies('inicio');
                     } else {
-                        addBotMessage('No entendí tu mensaje. 🤔\n\nPor favor selecciona una de las opciones o escribe "menu" para ver las opciones disponibles.');
+                        addBotMessage('No entendí tu mensaje. 🤔\n\nPor favor selecciona una de las opciones disponibles.');
                     }
                     break;
 
                 case 'servicios':
-                    if (normalizedInput === '1') {
-                        addBotMessage('Perfecto! Para brindarte una cotización personalizada necesito algunos datos:\n\n📝 ¿Cuál es tu nombre?');
+                    if (normalizedInput === 'starter' || normalizedInput === 'professional' || normalizedInput === 'enterprise') {
+                        chatState.selectedPlan = normalizedInput;
+                        const planDetails = {
+                            'starter': '🚀 *Plan Starter - $999/mes*\n\n✓ 2 Redes Sociales\n✓ 12 Publicaciones\n✓ Community Management\n✓ Reportes Mensuales',
+                            'professional': '👑 *Plan Professional - $2,499/mes*\n\n✓ 4 Redes Sociales\n✓ 25 Publicaciones\n✓ Campañas Ads\n✓ Email Marketing\n✓ SEO Avanzado',
+                            'enterprise': '💎 *Plan Enterprise - $4,999/mes*\n\n✓ Redes Ilimitadas\n✓ Publicaciones Ilimitadas\n✓ Equipo Dedicado 24/7\n✓ Todo incluido'
+                        };
+                        addBotMessage(planDetails[normalizedInput] + '\n\n¿Qué te gustaría hacer?');
+                        chatState.step = 'plan_seleccionado';
+                        showQuickReplies('planes');
+                    } else if (normalizedInput === 'menu') {
+                        addBotMessage(messages.welcome);
+                        chatState.step = 'inicio';
+                        showQuickReplies('inicio');
+                    } else {
+                        addBotMessage('Por favor selecciona uno de los planes disponibles.');
+                    }
+                    break;
+
+                case 'plan_seleccionado':
+                    if (normalizedInput === 'cotizar') {
+                        addBotMessage('¡Perfecto! Para tu cotización personalizada del Plan ' + chatState.selectedPlan.toUpperCase() + ':\n\n📝 ¿Cuál es tu nombre?');
                         chatState.step = 'cotizacion_nombre';
                         document.getElementById('quickReplies').innerHTML = '';
-                    } else if (normalizedInput === '2') {
-                        addBotMessage('¡Genial! Agendemos una reunión 📅\n\n¿Qué tipo de reunión prefieres?\n\n1️⃣ Videollamada\n2️⃣ Llamada telefónica\n3️⃣ Presencial');
-                        chatState.step = 'reunion_tipo';
+                    } else if (normalizedInput === 'agendar') {
+                        addBotMessage('¡Excelente! Agendemos una reunión para hablar del Plan ' + chatState.selectedPlan.toUpperCase() + '\n\n📝 ¿Cuál es tu nombre?');
+                        chatState.step = 'reunion_nombre';
                         document.getElementById('quickReplies').innerHTML = '';
-                    } else if (normalizedInput === '3') {
-                        addBotMessage(messages.cases);
-                    } else if (normalizedInput === '4' || normalizedInput === 'menu') {
-                        addBotMessage(messages.welcome);
-                        chatState.step = 'menu_principal';
-                        showQuickReplies('inicio');
+                    } else if (normalizedInput === 'llamar') {
+                        addBotMessage('¡Genial! Puedes llamarnos directamente:\n\n📱 WhatsApp: +57 350 389 9157\n☎️ Oficina CDMX: +52 55 1234 5678\n\nO también puedes solicitar que te llamemos dejando tus datos.');
+                        showQuickReplies('planes');
+                    } else if (normalizedInput === 'planes') {
+                        addBotMessage(messages.services);
+                        chatState.step = 'servicios';
+                        showQuickReplies('servicios');
                     }
                     break;
 
                 case 'cotizacion_nombre':
                     chatState.data.nombre = input;
-                    addBotMessage(`Mucho gusto *${chatState.data.nombre}*! 😊\n\n¿Cuál es el nombre de tu empresa o proyecto?`);
+                    addBotMessage(`Mucho gusto *${chatState.data.nombre}*! 😊\n\n¿Cuál es el nombre de tu empresa?`);
                     chatState.step = 'cotizacion_empresa';
                     break;
 
                 case 'cotizacion_empresa':
                     chatState.data.empresa = input;
-                    addBotMessage('Perfecto! ¿Qué servicio te interesa?\n\n1️⃣ Marketing Digital\n2️⃣ Branding & Diseño\n3️⃣ Análisis de Datos\n4️⃣ Estrategia de Contenido\n5️⃣ Growth Marketing\n6️⃣ Consultoría\n7️⃣ Paquete completo');
-                    chatState.step = 'cotizacion_servicio';
+                    addBotMessage('Excelente! ¿Cuál es tu email de contacto? 📧');
+                    chatState.step = 'cotizacion_email';
                     break;
 
-                case 'cotizacion_servicio':
-                    const servicios = {
-                        '1': 'Marketing Digital',
-                        '2': 'Branding & Diseño',
-                        '3': 'Análisis de Datos',
-                        '4': 'Estrategia de Contenido',
-                        '5': 'Growth Marketing',
-                        '6': 'Consultoría',
-                        '7': 'Paquete Completo'
-                    };
-                    chatState.data.servicio = servicios[normalizedInput] || input;
-                    addBotMessage('Excelente elección! 🎯\n\n¿Cuál es tu presupuesto aproximado?\n\n1️⃣ $500 - $1,000 USD\n2️⃣ $1,000 - $3,000 USD\n3️⃣ $3,000 - $5,000 USD\n4️⃣ Más de $5,000 USD\n5️⃣ Por definir');
-                    chatState.step = 'cotizacion_presupuesto';
+                case 'cotizacion_email':
+                    chatState.data.email = input;
+                    addBotMessage('Perfecto! ¿Tu teléfono o WhatsApp? 📱');
+                    chatState.step = 'cotizacion_telefono';
                     break;
 
-                case 'cotizacion_presupuesto':
-                    const presupuestos = {
-                        '1': '$500 - $1,000 USD',
-                        '2': '$1,000 - $3,000 USD',
-                        '3': '$3,000 - $5,000 USD',
-                        '4': 'Más de $5,000 USD',
-                        '5': 'Por definir'
-                    };
-                    chatState.data.presupuesto = presupuestos[normalizedInput] || input;
+                case 'cotizacion_telefono':
+                    chatState.data.telefono = input;
                     
-                    // Enviar datos al backend o email
-                    sendLeadData(chatState.data);
+                    // Send data
+                    sendLeadData({
+                        ...chatState.data,
+                        plan: chatState.selectedPlan || 'No especificado',
+                        tipo: 'Cotización'
+                    });
                     
-                    addBotMessage(`¡Excelente *${chatState.data.nombre}*! ✅\n\n*Resumen de tu solicitud:*\n👤 Nombre: ${chatState.data.nombre}\n🏢 Empresa: ${chatState.data.empresa}\n🎯 Servicio: ${chatState.data.servicio}\n💰 Presupuesto: ${chatState.data.presupuesto}\n\nUn asesor se contactará contigo en las próximas 24 horas.\n\n¿Hay algo más en lo que pueda ayudarte?`);
+                    addBotMessage(`¡Excelente *${chatState.data.nombre}*! ✅\n\n*Resumen de tu solicitud:*\n👤 ${chatState.data.nombre}\n🏢 ${chatState.data.empresa}\n📧 ${chatState.data.email}\n📱 ${chatState.data.telefono}\n📋 Plan: ${chatState.selectedPlan || 'Por definir'}\n\n*Un ejecutivo te contactará en las próximas 24 horas* para enviarte tu cotización personalizada.\n\nMientras tanto, ¿hay algo más en lo que pueda ayudarte?`);
                     
-                    chatState.step = 'menu_principal';
+                    chatState.step = 'inicio';
+                    chatState.data = {};
                     showQuickReplies('inicio');
                     break;
 
-                case 'reunion_tipo':
-                    const tipos = {
-                        '1': 'Videollamada',
-                        '2': 'Llamada telefónica',
-                        '3': 'Presencial'
-                    };
-                    chatState.data.tipoReunion = tipos[normalizedInput] || input;
-                    addBotMessage(`Perfecto! ${chatState.data.tipoReunion} 📅\n\nPor favor déjame tu:\n\n📝 Nombre completo:\n📞 Teléfono:\n📧 Email:\n\n(Puedes enviarlos todos juntos)`);
-                    chatState.step = 'reunion_datos';
+                case 'reunion_nombre':
+                    chatState.data.nombre = input;
+                    addBotMessage(`Perfecto *${chatState.data.nombre}*! 📅\n\n¿Cuál es tu email?`);
+                    chatState.step = 'reunion_email';
                     break;
 
-                case 'reunion_datos':
-                    chatState.data.contacto = input;
+                case 'reunion_email':
+                    chatState.data.email = input;
+                    addBotMessage('¿Tu teléfono o WhatsApp? 📱');
+                    chatState.step = 'reunion_telefono';
+                    break;
+
+                case 'reunion_telefono':
+                    chatState.data.telefono = input;
                     
-                    // Enviar datos
-                    sendMeetingData(chatState.data);
+                    // Send data
+                    sendLeadData({
+                        ...chatState.data,
+                        plan: chatState.selectedPlan || 'No especificado',
+                        tipo: 'Reunión'
+                    });
                     
-                    addBotMessage(`¡Listo! ✅\n\n*Solicitud de reunión registrada*\n📅 Tipo: ${chatState.data.tipoReunion}\n📋 Contacto: ${chatState.data.contacto}\n\nUn asesor confirmará tu reunión y te enviará los detalles.\n\n¡Gracias por confiar en Marketing Pro! 🚀`);
+                    addBotMessage(`¡Listo *${chatState.data.nombre}*! ✅\n\n*Solicitud de reunión registrada*\n👤 ${chatState.data.nombre}\n📧 ${chatState.data.email}\n📱 ${chatState.data.telefono}\n\n*Un asesor te contactará para confirmar fecha y hora.*\n\n¡Gracias por confiar en King Marketing! 👑`);
                     
-                    chatState.step = 'menu_principal';
+                    chatState.step = 'inicio';
                     chatState.data = {};
                     showQuickReplies('inicio');
                     break;
 
                 default:
                     addBotMessage(messages.welcome);
-                    chatState.step = 'menu_principal';
+                    chatState.step = 'inicio';
                     showQuickReplies('inicio');
             }
         }
@@ -1777,26 +1924,19 @@ Soy tu asistente virtual y estoy aquí para ayudarte.
             messages.scrollTop = messages.scrollHeight;
         }
 
-        function showBadge() {
-            const badge = document.getElementById('chatBadge');
-            badge.classList.add('show');
-        }
-
         function sendLeadData(data) {
-            // Enviar a EmailJS o tu backend
             console.log('Lead data:', data);
             
-            // Ejemplo con EmailJS (usando tu configuración existente)
             if (typeof emailjs !== 'undefined') {
                 emailjs.send('service_1my1ljq', 'template_dst3ela', {
                     from_name: data.nombre,
-                    from_email: 'chatbot@marketingpro.com',
-                    phone: 'Pendiente',
-                    message: `Nueva solicitud de cotización:
-                    
-Empresa: ${data.empresa}
-Servicio: ${data.servicio}
-Presupuesto: ${data.presupuesto}`,
+                    from_email: data.email,
+                    phone: data.telefono,
+                    message: `
+Tipo: ${data.tipo}
+Empresa: ${data.empresa || 'No especificado'}
+Plan Interesado: ${data.plan}
+                    `,
                     to_email: 'deislersaid1418@gmail.com'
                 }).then(
                     () => console.log('Lead enviado exitosamente'),
@@ -1805,28 +1945,63 @@ Presupuesto: ${data.presupuesto}`,
             }
         }
 
-        function sendMeetingData(data) {
-            console.log('Meeting data:', data);
+        function openChatWithPlan(plan) {
+            const planLower = plan.toLowerCase();
+            chatState.selectedPlan = planLower;
+            chatState.step = 'plan_seleccionado';
             
-            if (typeof emailjs !== 'undefined') {
-                emailjs.send('service_1my1ljq', 'template_dst3ela', {
-                    from_name: 'Chatbot',
-                    from_email: 'chatbot@marketingpro.com',
-                    phone: data.contacto,
-                    message: `Nueva solicitud de reunión:
-                    
-Tipo: ${data.tipoReunion}
-Contacto: ${data.contacto}`,
-                    to_email: 'deislersaid1418@gmail.com'
-                }).then(
-                    () => console.log('Reunión enviada exitosamente'),
-                    (error) => console.error('Error enviando reunión:', error)
-                );
-            }
+            document.getElementById('chatWindow').classList.add('open');
+            
+            setTimeout(() => {
+                const planDetails = {
+                    'starter': '🚀 *Plan Starter - $999/mes*\n\nHas seleccionado nuestro plan ideal para comenzar tu presencia digital.\n\n¿Qué te gustaría hacer?',
+                    'professional': '👑 *Plan Professional - $2,499/mes*\n\nExcelente elección! Nuestro plan más popular para empresas en crecimiento.\n\n¿Qué te gustaría hacer?',
+                    'enterprise': '💎 *Plan Enterprise - $4,999/mes*\n\nPerfecto! Nuestra solución más completa para grandes corporativos.\n\n¿Qué te gustaría hacer?'
+                };
+                
+                addBotMessage(planDetails[planLower]);
+                showQuickReplies('planes');
+                scrollToBottom();
+            }, 500);
         }
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
 
         // Initialize chat when page loads
         window.addEventListener('load', initChat);
+
+        // Header scroll effect
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.style.background = 'rgba(26, 26, 46, 0.98)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%)';
+            }
+
+            lastScroll = currentScroll;
+        });
     </script>
-    </body>
+</body>
 </html>
