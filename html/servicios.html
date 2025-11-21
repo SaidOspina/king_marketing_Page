@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dqaxadodm/image/upload/v1762022642/c0392d05-74c5-48bf-aee2-800155467a5f_p9qphw.ico">
+    <title>Servicios y Planes - King Marketing</title>
+    <link rel="stylesheet" href="../css/servicios.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="https://res.cloudinary.com/dqaxadodm/image/upload/v1762022642/c0392d05-74c5-48bf-aee2-800155467a5f_p9qphw.ico" alt="King Marketing Logo">
+                <span class="logo-text">KING MARKETING</span>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="servicios.html" class="active">Servicios y Planes</a></li>
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Planes de Marketing Digital</h1>
+        <p>Soluciones diseñadas para cada etapa de tu negocio</p>
+    </section>
+
+    <!-- Main Plans Section -->
+    <section>
+        <h2 class="section-title">💎 Nuestros Planes Principales</h2>
+        <p class="section-subtitle">
+            Elige el plan perfecto para tu negocio. Todos incluyen soporte dedicado y reportes detallados
+        </p>
+
+        <div class="plans-grid">
+            <!-- Starter Plan -->
+            <div class="plan-card">
+                <span class="plan-icon">🚀</span>
+                <h3 class="plan-name">Plan Starter</h3>
+                <div class="plan-price">$999<span>/mes</span></div>
+                <p class="plan-description">Ideal para empresas que inician su presencia digital y buscan resultados concretos</p>
+                
+                <ul class="plan-features">
+                    <li>Gestión de 2 Redes Sociales principales</li>
+                    <li>12 Publicaciones Mensuales diseñadas</li>
+                    <li>Community Management Básico</li>
+                    <li>Reportes Mensuales de métricas</li>
+                    <li>Diseño de Contenido Visual</li>
+                    <li>SEO Básico On-Page</li>
+                    <li>Estrategia de contenido mensual</li>
+                    <li>Respuesta a comentarios y mensajes</li>
+                    <li>Análisis de competencia básico</li>
+                    <li>Soporte vía email</li>
+                </ul>
+
+                <button class="plan-button" onclick="selectPlan('Starter')">Contratar Plan Starter</button>
+            </div>
+
+            <!-- Professional Plan (Featured) -->
+            <div class="plan-card featured">
+                <span class="plan-badge">⭐ MÁS POPULAR</span>
+                <span class="plan-icon">👑</span>
+                <h3 class="plan-name">Plan Professional</h3>
+                <div class="plan-price">$2,499<span>/mes</span></div>
+                <p class="plan-description">Para empresas que buscan crecimiento acelerado y presencia digital dominante</p>
+                
+                <ul class="plan-features">
+                    <li>Gestión de 4 Redes Sociales completas</li>
+                    <li>25 Publicaciones Mensuales premium</li>
+                    <li>Community Management Completo 24/7</li>
+                    <li>Campañas Publicitarias (Google & Meta Ads)</li>
+                    <li>Email Marketing automation</li>
+                    <li>SEO Avanzado (On-Page + Off-Page)</li>
+                    <li>Landing Pages optimizadas</li>
+                    <li>Estrategia de Contenido integral</li>
+                    <li>Diseño gráfico ilimitado</li>
+                    <li>Reportes Semanales detallados</li>
+                    <li>Análisis de competencia avanzado</li>
+                    <li>A/B Testing de campañas</li>
+                    <li>Remarketing strategies</li>
+                    <li>Soporte Prioritario WhatsApp</li>
+                </ul>
+
+                <button class="plan-button" onclick="selectPlan('Professional')">Contratar Plan Professional</button>
+            </div>
+
+            <!-- Enterprise Plan -->
+            <div class="plan-card">
+                <span class="plan-icon">💎</span>
+                <h3 class="plan-name">Plan Enterprise</h3>
+                <div class="plan-price">$4,999<span>/mes</span></div>
+                <p class="plan-description">Solución integral para grandes corporativos que exigen excelencia total</p>
+                
+                <ul class="plan-features">
+                    <li>Gestión Ilimitada de Redes Sociales</li>
+                    <li>Publicaciones Ilimitadas personalizadas</li>
+                    <li>Equipo Dedicado 24/7 exclusivo</li>
+                    <li>Campañas Multimedia Completas</li>
+                    <li>Marketing Automation avanzado</li>
+                    <li>CRM Integration completa</li>
+                    <li>Analítica Avanzada & Business Intelligence</li>
+                    <li>Influencer Marketing campaigns</li>
+                    <li>Video Marketing profesional</li>
+                    <li>Consultoría Estratégica mensual</li>
+                    <li>Growth Hacking techniques</li>
+                    <li>Desarrollo Web/App a medida</li>
+                    <li>Branded content creation</li>
+                    <li>PR Digital & Media Relations</li>
+                    <li>Account Manager dedicado</li>
+                    <li>Reportes Diarios en tiempo real</li>
+                </ul>
+
+                <button class="plan-button" onclick="selectPlan('Enterprise')">Contratar Plan Enterprise</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Services -->
+    <section style="background: var(--light-bg); padding: 6rem 2rem; margin: 4rem 0; border-radius: 20px;">
+        <h2 class="section-title">🛠️ Servicios Adicionales</h2>
+        <p class="section-subtitle">
+            Complementa tu plan con servicios especializados para potenciar tu marca
+        </p>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">🎨</span>
+                <h3 class="service-name">Branding & Diseño</h3>
+                <p class="service-price">Desde $1,500</p>
+                <p class="service-description">
+                    Diseño de identidad corporativa completa: logo, manual de marca, papelería, aplicaciones digitales y más.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">📹</span>
+                <h3 class="service-name">Producción Audiovisual</h3>
+                <p class="service-price">Desde $2,000</p>
+                <p class="service-description">
+                    Videos corporativos, spots publicitarios, motion graphics, animación 2D/3D y edición profesional.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">📸</span>
+                <h3 class="service-name">Fotografía Profesional</h3>
+                <p class="service-price">Desde $500</p>
+                <p class="service-description">
+                    Sesiones de producto, eventos corporativos, fotografía lifestyle y contenido para redes sociales.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">💻</span>
+                <h3 class="service-name">Desarrollo Web</h3>
+                <p class="service-price">Desde $3,000</p>
+                <p class="service-description">
+                    Sitios web responsive, e-commerce, landing pages, aplicaciones web y sistemas personalizados.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">📊</span>
+                <h3 class="service-name">Consultoría Digital</h3>
+                <p class="service-price">Desde $1,000</p>
+                <p class="service-description">
+                    Auditoría digital, estrategia de marketing, capacitación de equipos y asesoría especializada.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🎯</span>
+                <h3 class="service-name">Performance Marketing</h3>
+                <p class="service-price">10-20% del presupuesto</p>
+                <p class="service-description">
+                    Gestión profesional de Google Ads, Facebook Ads, Instagram Ads, TikTok Ads y LinkedIn Ads.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section>
+        <h2 class="section-title">📋 Comparación de Planes</h2>
+        <p class="section-subtitle">
+            Compara las características de cada plan para tomar la mejor decisión
+        </p>
+
+        <div class="comparison-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>Starter</th>
+                        <th>Professional</th>
+                        <th>Enterprise</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Redes Sociales</strong></td>
+                        <td>2 plataformas</td>
+                        <td>4 plataformas</td>
+                        <td>Ilimitadas</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Publicaciones Mensuales</strong></td>
+                        <td>12 posts</td>
+                        <td>25 posts</td>
+                        <td>Ilimitadas</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Community Management</strong></td>
+                        <td><span class="check-icon">✓</span> Básico</td>
+                        <td><span class="check-icon">✓</span> 24/7</td>
+                        <td><span class="check-icon">✓</span> Equipo dedicado</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Campañas Publicitarias</strong></td>
+                        <td><span class="cross-icon">✗</span></td>
+                        <td><span class="check-icon">✓</span></td>
+                        <td><span class="check-icon">✓</span> Multimedia</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Email Marketing</strong></td>
+                        <td><span class="cross-icon">✗</span></td>
+                        <td><span class="check-icon">✓</span></td>
+                        <td><span class="check-icon">✓</span> + Automation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SEO</strong></td>
+                        <td>Básico</td>
+                        <td>Avanzado</td>
+                        <td>Completo + BI</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Landing Pages</strong></td>
+                        <td><span class="cross-icon">✗</span></td>
+                        <td><span class="check-icon">✓</span></td>
+                        <td><span class="check-icon">✓</span> Ilimitadas</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Diseño Gráfico</strong></td>
+                        <td>Incluido</td>
+                        <td>Ilimitado</td>
+                        <td>Ilimitado + Branding</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Video Marketing</strong></td>
+                        <td><span class="cross-icon">✗</span></td>
+                        <td><span class="cross-icon">✗</span></td>
+                        <td><span class="check-icon">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Influencer Marketing</strong></td>
+                        <td><span class="cross-icon">✗</span></td>
+                        <td><span class="cross-icon">✗</span></td>
+                        <td><span class="check-icon">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Account Manager</strong></td>
+                        <td><span class="cross-icon">✗</span></td>
+                        <td><span class="cross-icon">✗</span></td>
+                        <td><span class="check-icon">✓</span> Dedicado</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reportes</strong></td>
+                        <td>Mensuales</td>
+                        <td>Semanales</td>
+                        <td>Diarios en tiempo real</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Soporte</strong></td>
+                        <td>Email</td>
+                        <td>WhatsApp prioritario</td>
+                        <td>24/7 dedicado</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Precio Mensual</strong></td>
+                        <td><strong style="color: var(--gold-color);">$999</strong></td>
+                        <td><strong style="color: var(--gold-color);">$2,499</strong></td>
+                        <td><strong style="color: var(--gold-color);">$4,999</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section>
+        <h2 class="section-title">❓ Preguntas Frecuentes</h2>
+        <p class="section-subtitle">
+            Resolvemos tus dudas sobre nuestros servicios y planes
+        </p>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    ¿Puedo cambiar de plan en cualquier momento?
+                </div>
+                <div class="faq-answer">
+                    Sí, puedes actualizar o cambiar tu plan en cualquier momento. Si actualizas a un plan superior, solo pagas la diferencia prorrateada. Si deseas cambiar a un plan inferior, el cambio se aplicará en tu próximo ciclo de facturación.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    ¿Existe contrato de permanencia?
+                </div>
+                <div class="faq-answer">
+                    Nuestros planes son mensuales sin permanencia obligatoria. Sin embargo, ofrecemos descuentos del 10% en contrataciones anuales y 15% en contratos bianuales. Puedes cancelar tu servicio con 30 días de anticipación.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    ¿Qué incluye exactamente el Community Management?
+                </div>
+                <div class="faq-answer">
+                    El Community Management incluye la gestión completa de tus redes sociales: respuesta a comentarios y mensajes directos, moderación de contenido, interacción con seguidores, gestión de crisis de reputación online y construcción de comunidad. En planes Professional y Enterprise incluye atención 24/7.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    ¿Cómo funcionan las campañas publicitarias?
+                </div>
+                <div class="faq-answer">
+                    Diseñamos, implementamos y optimizamos campañas en plataformas como Google Ads, Facebook, Instagram, TikTok y LinkedIn. El presupuesto publicitario (inversión en ads) es adicional al costo del plan y lo manejas directamente desde tu cuenta. Nosotros gestionamos la estrategia, creatividad y optimización.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    ¿Proporcionan el contenido fotográfico y de video?
+                </div>
+                <div class="faq-answer">
+                    En todos los planes diseñamos contenido gráfico profesional. Para fotografía y video profesional, ofrecemos estos servicios como adicionales desde $500 y $2,000 respectivamente. También podemos trabajar con material que nos proporciones o usar bancos de imágenes premium.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    ¿Cuánto tiempo tarda en verse resultados?
+                </div>
+                <div class="faq-answer">
+                    Los primeros resultados en engagement y alcance suelen verse en las primeras 4-6 semanas. Para resultados más significativos en conversiones y ventas, recomendamos evaluar a los 3-6 meses. El SEO requiere entre 6-12 meses para resultados óptimos. Proporcionamos reportes constantes para que veas el progreso.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    ¿Trabajan con empresas de cualquier sector?
+                </div>
+                <div class="faq-answer">
+                    Sí, tenemos experiencia en más de 20 sectores diferentes: tecnología, automotriz, retail, salud, educación, finanzas, inmobiliario, alimentos, entre otros. Adaptamos nuestras estrategias a las necesidades específicas de cada industria.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    ¿Qué pasa si no estoy satisfecho con los resultados?
+                </div>
+                <div class="faq-answer">
+                    Ofrecemos una garantía de satisfacción. Si en los primeros 30 días no estás satisfecho con nuestro trabajo, te devolvemos el 100% de tu inversión. Además, trabajamos con KPIs claros y reportes transparentes para que siempre sepas el valor que estamos aportando.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    ¿Ofrecen servicios personalizados fuera de los planes?
+                </div>
+                <div class="faq-answer">
+                    Absolutamente. Podemos crear un plan completamente personalizado según tus necesidades específicas, presupuesto y objetivos. Contáctanos para una consulta gratuita y diseñaremos una propuesta a tu medida.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    ¿Cómo es el proceso de onboarding?
+                </div>
+                <div class="faq-answer">
+                    Una vez contratado el servicio, iniciamos con una reunión de kick-off donde conocemos a fondo tu marca, objetivos y público. Luego realizamos una auditoría digital, desarrollamos la estrategia, obtenemos tu aprobación y comenzamos la implementación. Todo el proceso toma entre 1-2 semanas.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="cta-content">
+            <h2>¿Listo para Transformar tu Presencia Digital?</h2>
+            <p>
+                Agenda una consulta gratuita con nuestros expertos y descubre cómo podemos ayudarte a alcanzar tus objetivos de marketing
+            </p>
+            <div class="cta-buttons">
+                <a href="contacto.html" class="cta-button">Solicitar Cotización Gratuita</a>
+                <a href="https://wa.me/573503899157" class="cta-button secondary" target="_blank">Chatear por WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section style="text-align: center; padding: 4rem 2rem;">
+        <h2 class="section-title">🏆 Por Qué Elegirnos</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-top: 3rem;">
+            <div>
+                <div style="font-size: 3.5rem; margin-bottom: 1rem;">🎯</div>
+                <h3 style="margin-bottom: 0.5rem; color: var(--primary-color);">Resultados Garantizados</h3>
+                <p style="color: #666;">Trabajamos con KPIs claros y garantizamos resultados medibles o devolvemos tu dinero</p>
+            </div>
+            <div>
+                <div style="font-size: 3.5rem; margin-bottom: 1rem;">👥</div>
+                <h3 style="margin-bottom: 0.5rem; color: var(--primary-color);">Equipo Experto</h3>
+                <p style="color: #666;">+50 especialistas certificados en las principales plataformas digitales</p>
+            </div>
+            <div>
+                <div style="font-size: 3.5rem; margin-bottom: 1rem;">📊</div>
+                <h3 style="margin-bottom: 0.5rem; color: var(--primary-color);">Transparencia Total</h3>
+                <p style="color: #666;">Reportes detallados y acceso 24/7 a tus métricas en tiempo real</p>
+            </div>
+            <div>
+                <div style="font-size: 3.5rem; margin-bottom: 1rem;">💡</div>
+                <h3 style="margin-bottom: 0.5rem; color: var(--primary-color);">Innovación Constante</h3>
+                <p style="color: #666;">Siempre a la vanguardia con las últimas tendencias y tecnologías</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/573503899157" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h3 style="margin-bottom: 1rem; font-size: 2rem;">👑 KING MARKETING</h3>
+            <p style="margin: 0.5rem 0; font-size: 1.1rem;">
+                Transformando marcas en líderes digitales
+            </p>
+            <p style="margin: 1.5rem 0; opacity: 0.9;">
+                📧 info@kingmarketing.com | 📱 +57 350 389 9157
+            </p>
+            <p style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                &copy; 2025 King Marketing. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script src="../js/servicios.js"></script>
+</body>
+</html>

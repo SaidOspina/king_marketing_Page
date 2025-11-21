@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dqaxadodm/image/upload/v1762022642/c0392d05-74c5-48bf-aee2-800155467a5f_p9qphw.ico">
+    <title>Nuestros Clientes - King Marketing</title>
+    <link rel="stylesheet" href="../css/clientes.css">
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="https://res.cloudinary.com/dqaxadodm/image/upload/v1762022642/c0392d05-74c5-48bf-aee2-800155467a5f_p9qphw.ico" alt="King Marketing Logo">
+                <span class="logo-text">KING MARKETING</span>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios y Planes</a></li>
+                <li><a href="clientes.html" class="active">Clientes</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Nuestros Clientes</h1>
+        <p>Más de 800 empresas confían en King Marketing</p>
+    </section>
+
+    <!-- Stats Banner -->
+    <section class="stats-banner">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Resultados que Hablan por Sí Solos</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>800+</h3>
+                <p>Clientes Activos</p>
+            </div>
+            <div class="stat-item">
+                <h3>50M+</h3>
+                <p>Facturación Gestionada</p>
+            </div>
+            <div class="stat-item">
+                <h3>98%</h3>
+                <p>Satisfacción del Cliente</p>
+            </div>
+            <div class="stat-item">
+                <h3>15+</h3>
+                <p>Países Atendidos</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Catalog -->
+    <section>
+        <h2 class="section-title">🏆 Catálogo de Clientes</h2>
+        <p class="section-subtitle">
+            Filtra por sector para ver las empresas líderes que han confiado en nosotros para transformar su presencia digital
+        </p>
+
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterClients('todos')">Todos</button>
+            <button class="filter-btn" onclick="filterClients('tecnologia')">🖥️ Tecnología</button>
+            <button class="filter-btn" onclick="filterClients('automotriz')">🚗 Automotriz</button>
+            <button class="filter-btn" onclick="filterClients('retail')">🛍️ Retail</button>
+            <button class="filter-btn" onclick="filterClients('alimentos')">🍔 Alimentos</button>
+            <button class="filter-btn" onclick="filterClients('salud')">⚕️ Salud</button>
+            <button class="filter-btn" onclick="filterClients('finanzas')">💰 Finanzas</button>
+            <button class="filter-btn" onclick="filterClients('educacion')">🎓 Educación</button>
+            <button class="filter-btn" onclick="filterClients('inmobiliario')">🏢 Inmobiliario</button>
+        </div>
+
+        <!-- Clients Grid -->
+        <div class="clients-grid" id="clientsGrid">
+            <!-- Tecnología -->
+            <div class="client-card" data-category="tecnologia">
+                <div class="client-card-front">
+                    <div class="client-icon">💻</div>
+                    <h3 class="client-name">MICROSOFT</h3>
+                    <p class="client-sector">Tecnología</p>
+                    <p class="client-stats">Cliente desde 2018</p>
+                </div>
+                <div class="client-card-back">
+                    <div class="client-comment-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="client-comment-text">"King Marketing nos ayudó a triplicar nuestro engagement en redes sociales. Equipo altamente profesional y estratégico."</p>
+                    <p class="client-comment-author">- Sarah Johnson, Marketing Lead</p>
+                    <div class="client-results">
+                        <div class="client-result-item">+320% Engagement en RRSS</div>
+                        <div class="client-result-item">500K nuevos seguidores</div>
+                        <div class="client-result-item">ROI 450%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-card" data-category="tecnologia">
+                <div class="client-card-front">
+                    <div class="client-icon">📱</div>
+                    <h3 class="client-name">SAMSUNG</h3>
+                    <p class="client-sector">Tecnología</p>
+                    <p class="client-stats">Cliente desde 2017</p>
+                </div>
+                <div class="client-card-back">
+                    <div class="client-comment-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="client-comment-text">"Resultados excepcionales en todas nuestras campañas digitales. Superaron todas nuestras expectativas."</p>
+                    <p class="client-comment-author">- Carlos Méndez, Director Digital</p>
+                    <div class="client-results">
+                        <div class="client-result-item">2M+ impresiones mensuales</div>
+                        <div class="client-result-item">+180% conversión</div>
+                        <div class="client-result-item">Líder en su sector</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-card" data-category="tecnologia">
+                <div class="client-card-front">
+                    <div class="client-icon">🌐</div>
+                    <h3 class="client-name">GOOGLE</h3>
+                    <p class="client-sector">Tecnología</p>
+                    <p class="client-stats">Cliente desde 2019</p>
+                </div>
+                <div class="client-card-back">
+                    <div class="client-comment-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="client-comment-text">"Partner estratégico confiable que entiende perfectamente el ecosistema digital moderno."</p>
+                    <p class="client-comment-author">- Ana Rodríguez, Head of Partnerships</p>
+                    <div class="client-results">
+                        <div class="client-result-item">Campañas en 15 países</div>
+                        <div class="client-result-item">+400% alcance</div>
+                        <div class="client-result-item">Premio Digital Excellence 2024</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Automotriz -->
+            <div class="client-card" data-category="automotriz">
+                <div class="client-card-front">
+                    <div class="client-icon">🚗</div>
+                    <h3 class="client-name">TOYOTA</h3>
+                    <p class="client-sector">Automotriz</p>
+                    <p class="client-stats">Cliente desde 2016</p>
+                </div>
+                <div class="client-card-back">
+                    <div class="client-comment-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="client-comment-text">"La mejor agencia con la que hemos trabajado. ROI impresionante en todas las campañas digitales."</p>
+                    <p class="client-comment-author">- Miguel Fernández, VP de Marketing</p>
+                    <div class="client-results">
+                        <div class="client-result-item">+250% leads calificados</div>
+                        <div class="client-result-item">150% incremento ventas</div>
+                        <div class="client-result-item">#1 engagement del sector</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-card" data-category="automotriz">
+                <div class="client-card-front">
+                    <div class="client-icon">🏎️</div>
+                    <h3 class="client-name">BMW</h3>
+                    <p class="client-sector">Automotriz</p>
+                    <p class="client-stats">Cliente desde 2019</p>
+                </div>
+                <div class="client-card-back">
+                    <div class="client-comment-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="client-comment-text">"Transformaron completamente nuestra estrategia digital con resultados medibles desde el primer mes."</p>
+                    <p class="client-comment-author">- Laura Díaz, Marketing Manager</p>
+                    <div class="client-results">
+                        <div class="client-result-item">+200% test drives agendados</div>
+                        <div class="client-result-item">300K+ alcance orgánico</div>
+                        <div class="client-result-item">Best Campaign 2023</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-card" data-category="automotriz">
+                <div class="client-card-front">
+                    <div class="client-icon">🚙</div>
+                    <h3 class="client-name">NISSAN</h3>
+                    <p class="client-sector">Automotriz</p>
+                    <p class="client-stats">Cliente desde 2020</p>
+                </div>
+                <div class="client-card-back">
+                    <div class="client-comment-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="client-comment-text">"Equipo creativo y analítico. Cada campaña supera la anterior en resultados."</p>
+                    <p class="client-comment-author">- Roberto Sánchez, Director Comercial</p>
+                    <div class="client-results">
+                        <div class="client-result-item">+180% consultas online</div>
+                        <div class="client-result-item">1M+ video views</div>
+                        <div class="client-result-item">35% reducción CAC</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Retail -->
+            <div class="client-card" data-category="retail">
+                <div class="client-card-front">
+                    <div class="client-icon">👟</div>
+                    <h3 class="client-name">NIKE</h3>
+                    <p class="client-sector">Retail / Deportivo</p>
+                    <p class="client-stats">Cliente desde 2018</p>
+                </div>
+                <div class="client-card-back">
+                    <div class="client-comment-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="client-comment-text">"Creatividad sin límites. Nuestras campañas digitales nunca habían tenido tanto impacto."</p>
+                    <p class="client-comment-author">- Patricia Gómez, Brand Manager</p>
+                    <div class="client-results">
+                        <div class="client-result-item">+400% engagement</div>
+                        <div class="client-result-item">2.5M nuevos followers</div>
+                        <div class="client-result-item">Campaña viral 15M+ alcance</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-card" data-category="retail">
+                <div class="client-card-front">
+                    <div class="client-icon">🛒</div>
+                    <h3 class="client-name">LIVERPOOL</h3>
+                    <p class="client-sector">Retail</p>
+                    <p class="client-stats">Cliente desde 2015</p>
+                </div>
+                <div class="client-card-back">
+                    <div class="client-comment-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="client-comment-text">"Impulsor clave de nuestro crecimiento en e-commerce. Resultados consistentes año tras año."</p>
+                    <p class="client-comment-author">- Jorge Martínez, E-commerce Director</p>
+                    <div class="client-results">
+                        <div class="client-result-item">+180% ventas online</div>
+                        <div class="client-result-item">2M+ seguidores RRSS</div>
+                        <div class="client-result-item">Best Social Media 2024</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-card" data-category="retail">
+                <div class="client-card-front">
+                    <div class="client-icon">🏬</div>
+                    <h3 class="client-name">ZARA</h3>
+                    <p class="client-sector">Retail / Moda</p>
+                    <p class="client-stats">Cliente desde 2020</p>
+                </div>
+                <div class="client-card-back">
+                    <div class="client-comment-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="client-comment-text">"Estrategias innovadoras que conectan perfectamente con nuestra audiencia millennial y Gen Z."</p>
+                    <p class="client-comment-author">- Isabella Torres, Social Media Lead</p>
+                    <div class="client-results">
+                        <div class="client-result-item">+350% tráfico web</div>
+                        <div class="client-result-item">1.8M+ interacciones</div>
+                        <div class="client-result-item">Influencer campaigns exitosas</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alimentos y Bebidas -->
+            <div class="client-card" data-category="alimentos">
+                <div class="client-card-front">
+                    <div class="client-icon">🥤</div>
+                    <h3 class="client-name">COCA-COLA</h3>
+                    <p class="client-sector">Alimentos y Bebidas</p>
+                    <p class="client-stats">Cliente desde 2017</p>
+                </div>
+                <div class="client-card-back">
+                    <div class="client-comment-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="client-comment-text">"King Marketing transformó nuestra presencia digital. Resultados excepcionales en redes sociales."</p>
+                    <p class="client-comment-author">- Ricardo Paz, Director de Marketing</p>
+                    <div class="client-results">
+                        <div class="client-result-item">+280% engagement</div>
+                        <div class="client-result-item">5M+ alcance mensual</div>
+                        <div class="client-result-item">Campañas en 12 países</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-card" data-category="alimentos">
+                <div class="client-card-front">
+                    <div class="client-icon">🍕</div>
+                    <h3 class="client-name">DOMINO'S PIZZA</h3>
+                    <p class="client-sector">Alimentos</p>
+                    <p class="client-stats">Cliente desde 2019</p>
+                </div>
+                <div class="client-card-back">
+                    <div class="client-comment-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="client-comment-text">"Aumentamos nuestras ventas digitales un 400% gracias a sus estrategias de social media y ads."</p>
+                    <p class="client-comment-author">- Andrea López, Marketing Manager</p>
+                    <div class="client-results">
+                        <div class="client-result-item">+400% pedidos online</div>
+                        <div class="client-result-item">800K+ app downloads</div>
+                        <div class="client-result-item">Líder en delivery digital</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-card" data-category="alimentos">
+                <div class="client-card-front">
+                    <div class="client-icon">☕</div>
+                    <h3 class="client-name">STARBUCKS</h3>
+                    <p class="client-sector">Alimentos y Bebidas</p>
+                    <p class="client-stats">Cliente desde 2018</p>
+                </div>
+                <div class="client-card-back">
+                    <div class="client-comment-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="client-comment-text">"Contenido creativo que genera conexión real con nuestra comunidad. Resultados medibles y consistentes."</p>
+                    <p class="client-comment-author">- Mariana Silva, Brand Director</p>
+                    <div class="client-results">
+                        <div class="client-result-item">+220% engagement stories</div>
+                        <div class="client-result-item">3M+ seguidores activos</div>
+                        <div class="client-result-item">UGC campaigns exitosas</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Salud -->
+            <div class="client-card" data-category="salud">
+                <div class="client-card-front">
+                    <div class="client-icon">⚕️</div>
+                    <h3 class="client-name">HOSPITAL ÁNGELES</h3>
+                    <p class="client-sector">Salud</p>
+                    <p class="client-stats">Cliente desde 2017</p>
+                </div>
+                <div class="client-card-back">
+                    <div class="client-comment-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="client-comment-text">"Nos ayudaron a humanizar nuestra marca digital y triplicar las consultas agendadas online."</p>
+                    <p class="client-comment-author">- Dr. Luis Ramírez, Director de Marketing</p>
+                    <div class="client-results">
+                        <div class="client-result-item">+350% consultas online</div>
+                        <div class="client-result-item">Plataforma telemedicina</div>
+                        <div class="client-result-item">Premio Innovación Digital</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-card" data-category="salud">
+                <div class="client-card-front">
+                    <div class="client-icon">💊</div>
+                    <h3 class="client-name">FARMACIAS SIMILARES</h3>
+                    <p class="client-sector">Salud / Retail</p>
+                    <p class="client-stats">Cliente desde 2020</p>
+                </div>
+                <div class="client-card-back">
+                    <div class="client-comment-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="client-comment-text">"Estrategia omnicanal perfecta. Logramos conectar con millones de mexicanos de forma efectiva."</p>
+                    <p class="client-comment-author">- Carmen Ruiz, Digital Marketing Head</p>
+                    <div class="client-results">
+                        <div class="client-result-item">+300% tráfico web</div>
+                        <div class="client-result-item">2M+ usuarios app</div>
+                        <div class="client-result-item">45% incremento ventas</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Finanzas -->
+            <div class="client-card" data-category="finanzas">
+                <div class="client-card-front">
+                    <div class="client-icon">🏦</div>
+                    <h3 class="client-name">BBVA</h3>
+                    <p class="client-sector">Finanzas</p>
+                    <p class="client-stats">Cliente desde 2016</p>
+                </div>
+                <div class="client-card-back">
+                    <div class="client-comment-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="client-comment-text">"500K nuevas cuentas digitales y 40% reducción en CAC. Resultados extraordinarios."</p>
+                    <p class="client-comment-author">- Fernando Castro, Head of Digital</p>
+                    <div class="client-results">
+                        <div class="client-result-item">500K+ cuentas digitales</div>
+                        <div class="client-result-item">40% reducción CAC</div>
+                        <div class="client-result-item">Viral campaign 10M+ alcance</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-card" data-category="finanzas">
+                <div class="client-card-front">
+                    <div class="client-icon">💳</div>
+                    <h3 class="client-name">AMERICAN EXPRESS</h3>
+                    <p class="client-sector">Finanzas</p>
+                    <p class="client-stats">Cliente desde 2019</p>
+                </div>
+                <div class="client-card-back">
+                    <div class="client-comment-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="client-comment-text">"Partner estratégico clave en nuestra transformación digital. Profesionalismo excepcional."</p>
+                    <p class="client-comment-author">- Victoria Morales, Marketing VP</p>
+                    <div class="client-results">
+                        <div class="client-result-item">+250% solicitudes online</div>
+                        <div class="client-result-item">Premium campaigns</div>
+                        <div class="client-result-item">Influencer partnerships</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-card" data-category="finanzas">
+                <div class="client-card-front">
+                    <div class="client-icon">📊</div>
+                    <h3 class="client-name">SANTANDER</h3>
+                    <p class="client-sector">Finanzas</p>
+                    <p class="client-stats">Cliente desde 2018</p>
+                </div>
+                <div class="client-card-back">
+                    <div class="client-comment-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="client-comment-text">"Excelente manejo de campañas complejas. Siempre cumplen y superan objetivos."</p>
+                    <p class="client-comment-author">- Pablo Navarro, Digital Director</p>
+                    <div class="client-results">
+                        <div class="client-result-item">+180% leads calificados</div>
+                        <div class="client-result-item">1.5M+ alcance</div>
+                        <div class="client-result-item">Best Banking Campaign 2023</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Educación -->
+            <div class="client-card" data-category="educacion">
+                <div class="client-card-front">
+                    <div class="client-icon">🎓</div>
+                    <h3 class="client-name">UNIVERSIDAD ANÁHUAC</h3>
+                    <p class="client-sector">Educación</p>
+                    <p class="client-stats">Cliente desde 2019</p>
+                </div>
+                <div class="client-card-back">
+                    <div class="client-comment-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="client-comment-text">"Aumentamos inscripciones 200% con estrategias digitales innovadoras y segmentadas."</p>
+                    <p class="client-comment-author">- Dra. Elena Vargas, Directora de Admisiones</p>
+                    <div class="client-results">
+                        <div class="client-result-item">+200% inscripciones</div>
+                        <div class="client-result-item">500K+ prospecto leads</div>
+                        <div class="client-result-item">Webinar strategies</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-card" data-category="educacion">
+                <div class="client-card-front">
+                    <div class="client-icon">📚</div>
+                    <h3 class="client-name">TECNOLÓGICO DE MONTERREY</h3>
+                    <p class="client-sector">Educación</p>
+                    <p class="client-stats">Cliente desde 2017</p>
+                </div>
+                <div class="client-card-back">
+                    <div class="client-comment-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="client-comment-text">"Creatividad y estrategia perfectamente balanceadas. Líderes en marketing educativo digital."</p>
+                    <p class="client-comment-author">- Mtro. Javier Pérez, Marketing Lead</p>
+                    <div class="client-results">
+                        <div class="client-result-item">+280% engagement</div>
+                        <div class="client-result-item">3M+ alcance orgánico</div>
+                        <div class="client-result-item">Gen Z campaigns</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inmobiliario -->
+            <div class="client-card" data-category="inmobiliario">
+                <div class="client-card-front">
+                    <div class="client-icon">🏢</div>
+                    <h3 class="client-name">GRUPO INMOBILIARIO ABC</h3>
+                    <p class="client-sector">Inmobiliario</p>
+                    <p class="client-stats">Cliente desde 2016</p>
+                </div>
+                <div class="client-card-back">
+                    <div class="client-comment-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="client-comment-text">"$200M+ en ventas generadas. El mejor socio estratégico para nuestro crecimiento digital."</p>
+                    <p class="client-comment-author">- Arq. Sergio Mendoza, CEO</p>
+                    <div class="client-results">
+                        <div class="client-result-item">$200M+ en ventas</div>
+                        <div class="client-result-item">300% ROI campañas</div>
+                        <div class="client-result-item">Líder digital del sector</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-card" data-category="inmobiliario">
+                <div class="client-card-front">
+                    <div class="client-icon">🏠</div>
+                    <h3 class="client-name">HOGARES UNIÓN</h3>
+                    <p class="client-sector">Inmobiliario</p>
+                    <p class="client-stats">Cliente desde 2020</p>
+                </div>
+                <div class="client-card-back">
+                    <div class="client-comment-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="client-comment-text">"Tours virtuales y estrategias digitales que transformaron nuestra forma de vender propiedades."</p>
+                    <p class="client-comment-author">- Lic. María Jiménez, Marketing Director</p>
+                    <div class="client-results">
+                        <div class="client-result-item">+350% leads calificados</div>
+                        <div class="client-result-item">Virtual tours 3D</div>
+                        <div class="client-result-item">50% faster sales cycle</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Testimonials -->
+    <section class="testimonials-slider">
+        <h2 class="section-title">💬 Lo Que Dicen Nuestros Clientes</h2>
+        <p class="section-subtitle">Testimonios reales de empresas que han transformado su presencia digital con King Marketing</p>
+        
+        <div class="testimonial-card">
+            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">
+                "Trabajar con King Marketing ha sido un cambio total para nuestra marca. En solo 6 meses logramos triplicar nuestro ROI en marketing digital y posicionarnos como líderes en nuestro sector. Su equipo no solo es creativo, sino también altamente analítico y orientado a resultados. Los recomiendo al 100%."
+            </p>
+            <div class="testimonial-author">
+                <div class="testimonial-avatar">MF</div>
+                <div class="testimonial-info">
+                    <h4>Miguel Fernández</h4>
+                    <p>VP de Marketing - Toyota México</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="text-align: center; background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; padding: 6rem 2rem; border-radius: 20px; margin: 4rem 0;">
+        <h2 style="font-size: 3rem; margin-bottom: 1rem;">¿Listo para Unirte a Nuestros Clientes de Éxito?</h2>
+        <p style="font-size: 1.3rem; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+            Descubre cómo podemos transformar tu presencia digital y llevar tu marca al siguiente nivel
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="contacto.html" style="display: inline-block; background: linear-gradient(135deg, #FFD700, #FFA500); color: #000; padding: 1.2rem 3rem; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: all 0.3s; box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);">
+                Solicitar Cotización
+            </a>
+            <a href="servicios.html" style="display: inline-block; background: transparent; color: white; padding: 1.2rem 3rem; border: 2px solid white; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: all 0.3s;">
+                Ver Planes
+            </a>
+        </div>
+    </section>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/573503899157" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h3 style="margin-bottom: 1rem; font-size: 2rem;">👑 KING MARKETING</h3>
+            <p style="margin: 0.5rem 0; font-size: 1.1rem;">
+                Transformando marcas en líderes digitales
+            </p>
+            <p style="margin: 1.5rem 0; opacity: 0.9;">
+                📧 info@kingmarketing.com | 📱 +57 350 389 9157
+            </p>
+            <p style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                &copy; 2025 King Marketing. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+    <script src="../js/clientes.js"></script>
+</body>
+</html>

@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dqaxadodm/image/upload/v1762022642/c0392d05-74c5-48bf-aee2-800155467a5f_p9qphw.ico">
+    <title>Nosotros - King Marketing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #1a1a1a;
+            --accent-color: #2b2b2b;
+            --gold-color: #FFD700;
+            --gold-dark: #FFA500;
+            --light-bg: #f8f9fa;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            transition: transform 0.3s;
+        }
+
+        .logo img:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #FFD700;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+                        url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.15), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, #FFD700, #FFA500);
+            margin: 1rem auto;
+            border-radius: 3px;
+        }
+
+        /* Story Section */
+        .story-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .story-text {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: #555;
+            margin-bottom: 2rem;
+            text-align: justify;
+        }
+
+        .story-highlight {
+            background: var(--light-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            border-left: 5px solid var(--gold-color);
+            margin: 3rem 0;
+        }
+
+        .story-highlight h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 4rem auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--gold-color), var(--gold-dark));
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
+        }
+
+        .timeline-year {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--gold-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--gold-color);
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px var(--gold-color);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 5rem 2rem;
+            margin: 4rem 0;
+            border-radius: 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+            color: #FFD700;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 60px rgba(255, 215, 0, 0.4);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .project-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-client {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-sector {
+            color: var(--gold-color);
+            font-size: 1.1rem;
+        }
+
+        .project-body {
+            padding: 2rem;
+        }
+
+        .project-duration {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .project-description {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-results {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .project-results h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .result-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+            color: #555;
+        }
+
+        .result-item::before {
+            content: "✓";
+            color: var(--gold-color);
+            font-weight: bold;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(255, 215, 0, 0.3);
+        }
+
+        .team-avatar {
+            width: 150px;
+            height: 150px;
+            margin: 2rem auto 1rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .team-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-role {
+            color: var(--gold-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .team-description {
+            padding: 0 1.5rem 2rem;
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Values Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(255, 215, 0, 0.3);
+        }
+
+        .value-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .value-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .value-description {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 6rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000;
+            padding: 1.3rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.7);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .cta-button.secondary:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 3rem;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+            animation: pulse 2s infinite;
+            z-index: 999;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 30px rgba(37, 211, 102, 0.8);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary-color);
+                flex-direction: column;
+                padding: 2rem;
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: row !important;
+                padding-left: 50px;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="https://res.cloudinary.com/dqaxadodm/image/upload/v1762022642/c0392d05-74c5-48bf-aee2-800155467a5f_p9qphw.ico" alt="King Marketing Logo">
+                <span class="logo-text">KING MARKETING</span>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios y Planes</a></li>
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="nosotros.html" class="active">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Sobre King Marketing</h1>
+        <p>15 años transformando marcas en líderes digitales</p>
+    </section>
+
+    <!-- Our Story -->
+    <section>
+        <h2 class="section-title">🏆 Nuestra Historia</h2>
+        <div class="story-content">
+            <p class="story-text">
+                Fundada en 2010, <strong>King Marketing</strong> nació con una visión clara: democratizar el marketing digital y hacer que empresas de todos los tamaños pudieran competir en la era digital. Lo que comenzó como un pequeño equipo de 3 personas apasionadas por el marketing, se ha convertido en una de las agencias más reconocidas de América Latina con más de 50 especialistas.
+            </p>
+            <p class="story-text">
+                Nuestro fundador, visionó un futuro donde cada empresa, sin importar su tamaño, pudiera acceder a estrategias de marketing de clase mundial. Esta filosofía nos ha llevado a trabajar con startups emergentes hasta corporaciones Fortune 500, siempre manteniendo el mismo nivel de excelencia y dedicación.
+            </p>
+
+            <div class="story-highlight">
+                <h3>💡 Nuestra Misión</h3>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">
+                    Empoderar a las empresas para que dominen el ecosistema digital a través de estrategias innovadoras, creativas y orientadas a resultados. Creemos que el marketing digital no es solo una herramienta, sino el motor que impulsa el crecimiento empresarial en el siglo XXI.
+                </p>
+            </div>
+
+            <div class="story-highlight">
+                <h3>🎯 Nuestra Visión</h3>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">
+                    Ser la agencia de marketing digital líder en América Latina, reconocida por transformar marcas y generar resultados excepcionales que superen las expectativas de nuestros clientes. Aspiramos a ser el socio estratégico preferido de empresas que buscan excelencia en el mundo digital.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section style="background: var(--light-bg); padding: 6rem 2rem; margin: 4rem 0; border-radius: 20px;">
+        <h2 class="section-title">📅 Nuestra Trayectoria</h2>
+        <p class="section-subtitle">15 años de crecimiento, innovación y éxito</p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2010</div>
+                    <h3 class="timeline-title">El Comienzo</h3>
+                    <p class="timeline-description">
+                        King Marketing abre sus puertas con un equipo de 3 personas y una cartera de 5 clientes. Primeros pasos en redes sociales y SEO.
+                    </p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2013</div>
+                    <h3 class="timeline-title">Expansión Regional</h3>
+                    <p class="timeline-description">
+                        Alcanzamos 50 clientes y expandimos operaciones a 5 países de Latinoamérica. Primer premio de "Mejor Campaña Digital".
+                    </p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2016</div>
+                    <h3 class="timeline-title">Marca Fortune 500</h3>
+                    <p class="timeline-description">
+                        Toyota se convierte en nuestro primer cliente Fortune 500. Equipo crece a 20 especialistas. Inauguración de segunda oficina.
+                    </p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2019</div>
+                    <h3 class="timeline-title">Innovación Tecnológica</h3>
+                    <p class="timeline-description">
+                        Implementación de IA y Machine Learning en nuestras estrategias. Lanzamiento de plataforma propia de analytics.
+                    </p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2022</div>
+                    <h3 class="timeline-title">Líder del Mercado</h3>
+                    <p class="timeline-description">
+                        Superamos los 500 clientes activos. Premio "Agencia del Año" por Asociación de Marketing Digital. Equipo de 50+ especialistas.
+                    </p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2025</div>
+                    <h3 class="timeline-title">Presente y Futuro</h3>
+                    <p class="timeline-description">
+                        800+ clientes satisfechos, presencia en 15 países, $50M+ en facturación gestionada. Continuamos innovando y creciendo.
+                    </p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <h2 class="section-title" style="color: white; margin-bottom: 3rem;">📈 King Marketing en Números</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>800+</h3>
+                <p>Clientes Activos</p>
+            </div>
+            <div class="stat-item">
+                <h3>$50M+</h3>
+                <p>Facturación Gestionada</p>
+            </div>
+            <div class="stat-item">
+                <h3>2,500+</h3>
+                <p>Proyectos Completados</p>
+            </div>
+            <div class="stat-item">
+                <h3>15+</h3>
+                <p>Países Atendidos</p>
+            </div>
+            <div class="stat-item">
+                <h3>50+</h3>
+                <p>Especialistas</p>
+            </div>
+            <div class="stat-item">
+                <h3>98%</h3>
+                <p>Tasa de Retención</p>
+            </div>
+            <div class="stat-item">
+                <h3>24/7</h3>
+                <p>Soporte Continuo</p>
+            </div>
+            <div class="stat-item">
+                <h3>15</h3>
+                <p>Años de Experiencia</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section>
+        <h2 class="section-title">💼 Proyectos Destacados</h2>
+        <p class="section-subtitle">
+            Casos de éxito que demuestran nuestro compromiso con la excelencia y los resultados
+        </p>
+
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-icon">🚗</div>
+                    <h3 class="project-client">Toyota México</h3>
+                    <p class="project-sector">Sector Automotriz</p>
+                </div>
+                <div class="project-body">
+                    <div class="project-duration">
+                        <span>📅</span>
+                        <span><strong>Duración:</strong> 3 años (2016-2019)</span>
+                    </div>
+                    <p class="project-description">
+                        Desarrollamos una estrategia integral de marketing digital que transformó la presencia online de Toyota en México, posicionándolos como líderes digitales en el sector automotriz.
+                    </p>
+                    <div class="project-results">
+                        <h4>🎯 Resultados Obtenidos:</h4>
+                        <div class="result-item">500K+ nuevas cuentas digitales</div>
+                        <div class="result-item">40% reducción en CAC</div>
+                        <div class="result-item">Campaña viral con 10M+ alcance</div>
+                        <div class="result-item">Premio a Mejor Innovación Digital</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-icon">🏢</div>
+                    <h3 class="project-client">Grupo Inmobiliario ABC</h3>
+                    <p class="project-sector">Sector Inmobiliario</p>
+                </div>
+                <div class="project-body">
+                    <div class="project-duration">
+                        <span>📅</span>
+                        <span><strong>Duración:</strong> 4 años (2017-2021)</span>
+                    </div>
+                    <p class="project-description">
+                        Estrategia integral que incluyó tours virtuales 3D, campañas de Google Ads, remarketing avanzado y content marketing especializado en bienes raíces de lujo.
+                    </p>
+                    <div class="project-results">
+                        <h4>🎯 Resultados Obtenidos:</h4>
+                        <div class="result-item">$200M+ en ventas generadas</div>
+                        <div class="result-item">300% ROI en campañas digitales</div>
+                        <div class="result-item">Líder digital del sector</div>
+                        <div class="result-item">50% reducción en ciclo de ventas</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-icon">🛍️</div>
+                    <h3 class="project-client">Liverpool Department Store</h3>
+                    <p class="project-sector">Sector Retail</p>
+                </div>
+                <div class="project-body">
+                    <div class="project-duration">
+                        <span>📅</span>
+                        <span><strong>Duración:</strong> 5 años (2015-2020)</span>
+                    </div>
+                    <p class="project-description">
+                        Transformación digital completa del e-commerce, estrategias de social media, influencer marketing y campañas estacionales que revolucionaron sus ventas online.
+                    </p>
+                    <div class="project-results">
+                        <h4>🎯 Resultados Obtenidos:</h4>
+                        <div class="result-item">180% crecimiento e-commerce</div>
+                        <div class="result-item">2M+ seguidores en RRSS</div>
+                        <div class="result-item">Best Social Media Campaign 2024</div>
+                        <div class="result-item">$80M+ en ventas online anuales</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-icon">🍔</div>
+                    <h3 class="project-client">Cadena Restaurantes Gourmet</h3>
+                    <p class="project-sector">Sector Alimentos</p>
+                </div>
+                <div class="project-body">
+                    <div class="project-duration">
+                        <span>📅</span>
+                        <span><strong>Duración:</strong> 2 años (2020-2022)</span>
+                    </div>
+                    <p class="project-description">
+                        Durante la pandemia, pivotamos su estrategia hacia delivery y reservas online, creando una experiencia digital completa que salvó y expandió el negocio.
+                    </p>
+                    <div class="project-results">
+                        <h4>🎯 Resultados Obtenidos:</h4>
+                        <div class="result-item">400% incremento en reservas online</div>
+                        <div class="result-item">Expansión a 20 nuevas sucursales</div>
+                        <div class="result-item">Estrategia de delivery exitosa</div>
+                        <div class="result-item">650K+ usuarios app móvil</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-icon">⚕️</div>
+                    <h3 class="project-client">Hospital Ángeles</h3>
+                    <p class="project-sector">Sector Salud</p>
+                </div>
+                <div class="project-body">
+                    <div class="project-duration">
+                        <span>📅</span>
+                        <span><strong>Duración:</strong> 3 años (2019-2022)</span>
+                    </div>
+                    <p class="project-description">
+                        Humanizamos la marca digital del hospital, implementamos telemedicina, estrategias de contenido educativo y campañas de posicionamiento como líder en salud.
+                    </p>
+                    <div class="project-results">
+                        <h4>🎯 Resultados Obtenidos:</h4>
+                        <div class="result-item">350% más consultas agendadas online</div>
+                        <div class="result-item">Plataforma de telemedicina exitosa</div>
+                        <div class="result-item">Premio a Innovación Digital 2021</div>
+                        <div class="result-item">1M+ usuarios plataforma digital</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section style="background: var(--light-bg); padding: 6rem 2rem; margin: 4rem 0; border-radius: 20px;">
+        <h2 class="section-title">👥 Nuestro Equipo</h2>
+        <p class="section-subtitle">
+            Conoce a los expertos que hacen posible el éxito de nuestros clientes
+        </p>
+
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-avatar">RF</div>
+                <h3 class="team-name">Roberto Fernández</h3>
+                <p class="team-role">CEO & Fundador</p>
+                <p class="team-description">
+                    Visionario con 15+ años en marketing digital. MBA de Harvard Business School. Ha liderado la transformación de +500 empresas.
+                </p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar">MC</div>
+                <h3 class="team-name">María Castro</h3>
+                <p class="team-role">Chief Strategy Officer</p>
+                <p class="team-description">
+                    Experta en estrategia digital con 12 años de experiencia. Certificada por Google y Meta. Especialista en growth hacking.
+                </p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar">JM</div>
+                <h3 class="team-name">Javier Méndez</h3>
+                <p class="team-role">Director Creativo</p>
+                <p class="team-description">
+                    Diseñador gráfico y creativo multimedia. Ganador de 8 premios internacionales. Líder del equipo de contenido visual.
+                </p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar">LP</div>
+                <h3 class="team-name">Laura Pérez</h3>
+                <p class="team-role">Head of Performance</p>
+                <p class="team-description">
+                    Especialista en Google Ads y Facebook Ads. Ha gestionado presupuestos de $10M+. Certificada en todas las plataformas publicitarias.
+                </p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar">CS</div>
+                <h3 class="team-name">Carlos Sánchez</h3>
+                <p class="team-role">Director de Tecnología</p>
+                <p class="team-description">
+                    Ingeniero en sistemas con 10+ años en desarrollo web. Especialista en IA y automatización de marketing.
+                </p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar">AR</div>
+                <h3 class="team-name">Ana Rodríguez</h3>
+                <p class="team-role">Social Media Manager</p>
+                <p class="team-description">
+                    Experta en gestión de comunidades y estrategias de contenido. Ha creado +20 campañas virales exitosas.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section>
+        <h2 class="section-title">💎 Nuestros Valores</h2>
+        <p class="section-subtitle">
+            Los principios que guían cada decisión y acción en King Marketing
+        </p>
+
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">🎯</div>
+                <h3 class="value-title">Orientación a Resultados</h3>
+                <p class="value-description">
+                    No medimos éxito por likes o seguidores, sino por el impacto real en el negocio de nuestros clientes. Cada estrategia está diseñada para generar resultados medibles y alcanzar objetivos concretos.
+                </p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon">💡</div>
+                <h3 class="value-title">Innovación Constante</h3>
+                <p class="value-description">
+                    El mundo digital cambia rápidamente. Nos mantenemos a la vanguardia, experimentando con nuevas tecnologías, plataformas y estrategias para dar a nuestros clientes ventaja competitiva.
+                </p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon">🤝</div>
+                <h3 class="value-title">Transparencia Total</h3>
+                <p class="value-description">
+                    Creemos en la comunicación honesta y abierta. Reportes detallados, acceso a métricas en tiempo real y conversaciones sinceras sobre qué funciona y qué no.
+                </p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon">🏆</div>
+                <h3 class="value-title">Excelencia</h3>
+                <p class="value-description">
+                    No nos conformamos con "suficientemente bueno". Cada campaña, diseño y estrategia debe cumplir con nuestros más altos estándares de calidad antes de presentarse al cliente.
+                </p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon">📚</div>
+                <h3 class="value-title">Aprendizaje Continuo</h3>
+                <p class="value-description">
+                    Invertimos en la capacitación constante de nuestro equipo. Certificaciones, cursos, conferencias y experimentación son parte fundamental de nuestra cultura.
+                </p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon">❤️</div>
+                <h3 class="value-title">Pasión</h3>
+                <p class="value-description">
+                    Amamos lo que hacemos. Cada proyecto es una oportunidad para crear algo extraordinario. Esta pasión se refleja en la calidad de nuestro trabajo y la satisfacción de nuestros clientes.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; padding: 6rem 2rem; margin: 4rem 0; border-radius: 20px; text-align: center;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">🏅 Certificaciones y Reconocimientos</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+            Nuestro compromiso con la excelencia nos ha llevado a obtener las principales certificaciones de la industria
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px);">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🎯</div>
+                <h3 style="margin-bottom: 0.5rem;">Google Partner</h3>
+                <p style="font-size: 0.9rem; opacity: 0.9;">Premier Partner certificado en Google Ads y Analytics</p>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px);">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">📘</div>
+                <h3 style="margin-bottom: 0.5rem;">Meta Business Partner</h3>
+                <p style="font-size: 0.9rem; opacity: 0.9;">Certificación oficial de Facebook e Instagram</p>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px);">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🏆</div>
+                <h3 style="margin-bottom: 0.5rem;">Agencia del Año 2023</h3>
+                <p style="font-size: 0.9rem; opacity: 0.9;">Asociación de Marketing Digital</p>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px);">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">💼</div>
+                <h3 style="margin-bottom: 0.5rem;">HubSpot Certified</h3>
+                <p style="font-size: 0.9rem; opacity: 0.9;">Inbound Marketing y Sales</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>¿Listo para Trabajar con los Mejores?</h2>
+        <p>
+            Únete a más de 800 empresas que han confiado en King Marketing para transformar su presencia digital y alcanzar sus objetivos de negocio
+        </p>
+        <div class="cta-buttons">
+            <a href="contacto.html" class="cta-button">Solicitar Consulta Gratuita</a>
+            <a href="servicios.html" class="cta-button secondary">Ver Nuestros Servicios</a>
+        </div>
+    </section>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/573503899157" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h3 style="margin-bottom: 1rem; font-size: 2rem;">👑 KING MARKETING</h3>
+            <p style="margin: 0.5rem 0; font-size: 1.1rem;">
+                Transformando marcas en líderes digitales
+            </p>
+            <p style="margin: 1.5rem 0; opacity: 0.9;">
+                📧 info@kingmarketing.com | 📱 +57 350 389 9157
+            </p>
+            <p style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                &copy; 2025 King Marketing. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.pageYOffset > 100) {
+                header.style.background = 'rgba(26, 26, 46, 0.98)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%)';
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.project-card, .team-card, .value-card, .timeline-item').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html></h4>
+                        <div class="result-item">250% aumento en leads calificados</div>
+                        <div class="result-item">150% incremento en ventas online</div>
+                        <div class="result-item">#1 en engagement del sector</div>
+                        <div class="result-item">ROI de 380% en campañas digitales</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-icon">🏦</div>
+                    <h3 class="project-client">BBVA Bancomer</h3>
+                    <p class="project-sector">Sector Financiero</p>
+                </div>
+                <div class="project-body">
+                    <div class="project-duration">
+                        <span>📅</span>
+                        <span><strong>Duración:</strong> 2 años (2018-2020)</span>
+                    </div>
+                    <p class="project-description">
+                        Implementamos una estrategia omnicanal para captar nuevos clientes digitales, enfocándonos en millennials y Gen Z con contenido relevante y campañas innovadoras.
+                    </p>
+                    <div class="project-results">
+                        <h4>🎯 Resultados Obtenidos:
