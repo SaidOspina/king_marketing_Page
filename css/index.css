@@ -10,6 +10,7 @@
             line-height: 1.6;
             color: #333;
             overflow-x: hidden;
+            
         }
 
         :root {
@@ -202,7 +203,7 @@
 
         /* Sections */
         section {
-            padding: 6rem 2rem;
+            padding: 0.5rem 0.5rem;
             max-width: 1400px;
             margin: 0 auto;
         }
